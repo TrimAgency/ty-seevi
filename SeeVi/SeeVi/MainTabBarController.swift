@@ -34,6 +34,8 @@ class MainTabBarController: UITabBarController {
         
         self.setViewControllers([placeHolderVC1, placeHolderVC2, svFeedViewController, placeHolderVC3, placeHolderVC4], animated: true)
         self.selectedIndex = 2
+        
+        self.delegate = self
     }
 }
 

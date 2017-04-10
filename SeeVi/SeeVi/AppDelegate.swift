@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func setupMainTBController() {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainTabBarController()
+        let mainTabBarController = MainTabBarController()
+        window?.rootViewController = mainTabBarController
         window?.makeKeyAndVisible()
     }
 
