@@ -14,6 +14,12 @@
 		10779DEB1E9C142300287557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10779DE91E9C142300287557 /* LaunchScreen.storyboard */; };
 		10779DF61E9C142300287557 /* SeeViTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DF51E9C142300287557 /* SeeViTests.swift */; };
 		10779E011E9C142300287557 /* SeeViUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E001E9C142300287557 /* SeeViUITests.swift */; };
+		10779E101E9C16D800287557 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E0F1E9C16D800287557 /* MainTabBarController.swift */; };
+		10779E131E9C172400287557 /* SeeViMainFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E121E9C172400287557 /* SeeViMainFeedController.swift */; };
+		10779E161E9C24BB00287557 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E151E9C24BB00287557 /* UIColor.swift */; };
+		94721EDBCA10C8D7E4FA01FA /* Pods_SeeViTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB9A878A6A9C4181B3DC7E /* Pods_SeeViTests.framework */; };
+		A926B5D011383368EBCFA549 /* Pods_SeeVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B05481957BF2F2A59439E7 /* Pods_SeeVi.framework */; };
+		CDE7B9458BE3ABCFF1B9C730 /* Pods_SeeViUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D958122A69F332734DB888 /* Pods_SeeViUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		069D59AAC142E5332B1D570F /* Pods-SeeViTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.release.xcconfig"; sourceTree = "<group>"; };
 		10779DDD1E9C142300287557 /* SeeVi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeVi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779DE01E9C142300287557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10779DE21E9C142300287557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,17 @@
 		10779DFC1E9C142300287557 /* SeeViUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeeViUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779E001E9C142300287557 /* SeeViUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeViUITests.swift; sourceTree = "<group>"; };
 		10779E021E9C142300287557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10779E0F1E9C16D800287557 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		10779E121E9C172400287557 /* SeeViMainFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViMainFeedController.swift; sourceTree = "<group>"; };
+		10779E151E9C24BB00287557 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		116E4F1A1548294BF50407B4 /* Pods-SeeViTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4664814C9453548D34778AF8 /* Pods-SeeVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi.release.xcconfig"; sourceTree = "<group>"; };
+		586459E8617230A53872667D /* Pods-SeeVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi.debug.xcconfig"; sourceTree = "<group>"; };
+		5DF9434BB47002421FAD643C /* Pods-SeeViUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViUITests/Pods-SeeViUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68D958122A69F332734DB888 /* Pods_SeeViUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeViUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97B05481957BF2F2A59439E7 /* Pods_SeeVi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeVi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A22442B532858C8A46C1C1 /* Pods-SeeViUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViUITests/Pods-SeeViUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D7FB9A878A6A9C4181B3DC7E /* Pods_SeeViTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeViTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A926B5D011383368EBCFA549 /* Pods_SeeVi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94721EDBCA10C8D7E4FA01FA /* Pods_SeeViTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE7B9458BE3ABCFF1B9C730 /* Pods_SeeViUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03BEF0B6156675A682CDD6A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				586459E8617230A53872667D /* Pods-SeeVi.debug.xcconfig */,
+				4664814C9453548D34778AF8 /* Pods-SeeVi.release.xcconfig */,
+				116E4F1A1548294BF50407B4 /* Pods-SeeViTests.debug.xcconfig */,
+				069D59AAC142E5332B1D570F /* Pods-SeeViTests.release.xcconfig */,
+				D1A22442B532858C8A46C1C1 /* Pods-SeeViUITests.debug.xcconfig */,
+				5DF9434BB47002421FAD643C /* Pods-SeeViUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		10779DD41E9C142300287557 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +115,8 @@
 				10779DF41E9C142300287557 /* SeeViTests */,
 				10779DFF1E9C142300287557 /* SeeViUITests */,
 				10779DDE1E9C142300287557 /* Products */,
+				03BEF0B6156675A682CDD6A2 /* Pods */,
+				331E4596A920351A9C934BA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +133,9 @@
 		10779DDF1E9C142300287557 /* SeeVi */ = {
 			isa = PBXGroup;
 			children = (
+				10779E141E9C24A200287557 /* AssetExtensions */,
+				10779E111E9C16FD00287557 /* FeedControllers */,
+				10779E0E1E9C16BA00287557 /* Custom */,
 				10779DE01E9C142300287557 /* AppDelegate.swift */,
 				10779DE21E9C142300287557 /* ViewController.swift */,
 				10779DE41E9C142300287557 /* Main.storyboard */,
@@ -125,6 +164,40 @@
 			path = SeeViUITests;
 			sourceTree = "<group>";
 		};
+		10779E0E1E9C16BA00287557 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				10779E0F1E9C16D800287557 /* MainTabBarController.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		10779E111E9C16FD00287557 /* FeedControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10779E121E9C172400287557 /* SeeViMainFeedController.swift */,
+			);
+			name = FeedControllers;
+			sourceTree = "<group>";
+		};
+		10779E141E9C24A200287557 /* AssetExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				10779E151E9C24BB00287557 /* UIColor.swift */,
+			);
+			name = AssetExtensions;
+			sourceTree = "<group>";
+		};
+		331E4596A920351A9C934BA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97B05481957BF2F2A59439E7 /* Pods_SeeVi.framework */,
+				D7FB9A878A6A9C4181B3DC7E /* Pods_SeeViTests.framework */,
+				68D958122A69F332734DB888 /* Pods_SeeViUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10779E051E9C142300287557 /* Build configuration list for PBXNativeTarget "SeeVi" */;
 			buildPhases = (
+				59FBACEB16C3637F601911C7 /* [CP] Check Pods Manifest.lock */,
 				10779DD91E9C142300287557 /* Sources */,
 				10779DDA1E9C142300287557 /* Frameworks */,
 				10779DDB1E9C142300287557 /* Resources */,
+				B643A60E35F7475378AB2613 /* [CP] Embed Pods Frameworks */,
+				81D00EB41AACD7E9D18AD89E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10779E081E9C142300287557 /* Build configuration list for PBXNativeTarget "SeeViTests" */;
 			buildPhases = (
+				9CF12B8F1AE8FB41F1C8C94B /* [CP] Check Pods Manifest.lock */,
 				10779DED1E9C142300287557 /* Sources */,
 				10779DEE1E9C142300287557 /* Frameworks */,
 				10779DEF1E9C142300287557 /* Resources */,
+				B13328123DF6833E3054FB38 /* [CP] Embed Pods Frameworks */,
+				8F553C59310A6249288F1CB7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10779E0B1E9C142300287557 /* Build configuration list for PBXNativeTarget "SeeViUITests" */;
 			buildPhases = (
+				D80371E43CE8F4EA83C1A65B /* [CP] Check Pods Manifest.lock */,
 				10779DF81E9C142300287557 /* Sources */,
 				10779DF91E9C142300287557 /* Frameworks */,
 				10779DFA1E9C142300287557 /* Resources */,
+				70BBD556618BA8D5B8166F09 /* [CP] Embed Pods Frameworks */,
+				609B5C97D4F169D1306C2421 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,13 +336,154 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59FBACEB16C3637F601911C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		609B5C97D4F169D1306C2421 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeeViUITests/Pods-SeeViUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70BBD556618BA8D5B8166F09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeeViUITests/Pods-SeeViUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81D00EB41AACD7E9D18AD89E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F553C59310A6249288F1CB7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CF12B8F1AE8FB41F1C8C94B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B13328123DF6833E3054FB38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B643A60E35F7475378AB2613 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D80371E43CE8F4EA83C1A65B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10779DD91E9C142300287557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				10779DE31E9C142300287557 /* ViewController.swift in Sources */,
+				10779E131E9C172400287557 /* SeeViMainFeedController.swift in Sources */,
 				10779DE11E9C142300287557 /* AppDelegate.swift in Sources */,
+				10779E101E9C16D800287557 /* MainTabBarController.swift in Sources */,
+				10779E161E9C24BB00287557 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +631,7 @@
 		};
 		10779E061E9C142300287557 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 586459E8617230A53872667D /* Pods-SeeVi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeeVi/Info.plist;
@@ -420,6 +644,7 @@
 		};
 		10779E071E9C142300287557 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4664814C9453548D34778AF8 /* Pods-SeeVi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeeVi/Info.plist;
@@ -432,6 +657,7 @@
 		};
 		10779E091E9C142300287557 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 116E4F1A1548294BF50407B4 /* Pods-SeeViTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -446,6 +672,7 @@
 		};
 		10779E0A1E9C142300287557 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 069D59AAC142E5332B1D570F /* Pods-SeeViTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +687,7 @@
 		};
 		10779E0C1E9C142300287557 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1A22442B532858C8A46C1C1 /* Pods-SeeViUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SeeViUITests/Info.plist;
@@ -473,6 +701,7 @@
 		};
 		10779E0D1E9C142300287557 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DF9434BB47002421FAD643C /* Pods-SeeViUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SeeViUITests/Info.plist;
@@ -503,6 +732,7 @@
 				10779E071E9C142300287557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10779E081E9C142300287557 /* Build configuration list for PBXNativeTarget "SeeViTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +741,7 @@
 				10779E0A1E9C142300287557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10779E0B1E9C142300287557 /* Build configuration list for PBXNativeTarget "SeeViUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +750,7 @@
 				10779E0D1E9C142300287557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
