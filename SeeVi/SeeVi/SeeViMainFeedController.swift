@@ -11,10 +11,12 @@ import UIKit
 import GoogleMaps
 import Stevia
 
-class SeeViMainFeedViewController: UIViewController {
+class SeeViSearchViewController: UIViewController {
     
     // MARK: - Views
     var googleMap = GMSMapView()
+    var searchButton = UIBarButtonItem()
+    var searchResultsTable = UITableViewController()
     
     // MARK: - Network managers
     let cllocationManager = CLLocationManager()
@@ -59,5 +61,20 @@ class SeeViMainFeedViewController: UIViewController {
         
         // MARK: - Additional layouts
         view.backgroundColor = UIColor.white
+        
+        searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(triggerSearch))
+        navigationItem.rightBarButtonItem = searchButton
     }
+    
+    //Show SearchResultsTableViewController when barbuttonitem is triggered
+    @objc fileprivate func triggerSearch() {
+        let searchController = UISearchController(searchResultsController: searchResultsTable)
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search your favorite place's address..."
+        self.present(searchController, animated: true, completion: nil)
+    }
+}
+
+extension SeeViSearchViewController : UISearchBarDelegate {
+    
 }
