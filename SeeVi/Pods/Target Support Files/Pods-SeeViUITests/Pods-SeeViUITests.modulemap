@@ -1,6 +1,0 @@
-framework module Pods_SeeViUITests {
-  umbrella header "Pods-SeeViUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

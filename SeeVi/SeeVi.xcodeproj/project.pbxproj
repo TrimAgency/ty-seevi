@@ -133,10 +133,10 @@
 		10779DDF1E9C142300287557 /* SeeVi */ = {
 			isa = PBXGroup;
 			children = (
+				10779DE01E9C142300287557 /* AppDelegate.swift */,
 				10779E141E9C24A200287557 /* AssetExtensions */,
 				10779E111E9C16FD00287557 /* FeedControllers */,
 				10779E0E1E9C16BA00287557 /* Custom */,
-				10779DE01E9C142300287557 /* AppDelegate.swift */,
 				10779DE21E9C142300287557 /* ViewController.swift */,
 				10779DE41E9C142300287557 /* Main.storyboard */,
 				10779DE71E9C142300287557 /* Assets.xcassets */,

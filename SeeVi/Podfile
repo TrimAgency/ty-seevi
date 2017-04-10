@@ -9,6 +9,7 @@ target 'SeeVi' do
   pod ‘SteviaLayout’
   pod ‘Alamofire’
   pod ’SwiftyJSON’
+  pod ‘GoogleMaps’
 
   target 'SeeViTests' do
     inherit! :search_paths
