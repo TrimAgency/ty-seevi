@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController {
     
     fileprivate func setupTabs() {
         let svFeedViewController = SeeViMainFeedViewController()
+        let svFeedNavController = UINavigationController(rootViewController: svFeedViewController)
         let placeHolderVC1 = UIViewController()
         let placeHolderVC2 = UIViewController()
         let placeHolderVC3 = UIViewController()
@@ -32,11 +33,11 @@ class MainTabBarController: UITabBarController {
         //Configure viewcontrollers in tabbarcontroller
         placeHolderVC1.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
         placeHolderVC2.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
-        svFeedViewController.tabBarItem = UITabBarItem(title: "Add", image: nil, tag: 2)
+        svFeedNavController.tabBarItem = UITabBarItem(title: "Add", image: nil, tag: 2)
         placeHolderVC3.tabBarItem = UITabBarItem(title: "Notifs", image: nil, tag: 3)
         placeHolderVC4.tabBarItem = UITabBarItem(title: "User", image: nil, tag: 4)
         //Add viewcontrollers
-        self.setViewControllers([placeHolderVC1, placeHolderVC2, svFeedViewController, placeHolderVC3, placeHolderVC4], animated: true)
+        self.setViewControllers([placeHolderVC1, placeHolderVC2, svFeedNavController, placeHolderVC3, placeHolderVC4], animated: true)
         self.selectedIndex = 2
         
         self.delegate = self
@@ -59,9 +60,7 @@ extension MainTabBarController: UITabBarControllerDelegate {
         UIView.transition(from: fromView,
                           to: toView,
                           duration: 0.3,
-                          options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
-        }
-        
+                          options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in }
         return true
     }
     
