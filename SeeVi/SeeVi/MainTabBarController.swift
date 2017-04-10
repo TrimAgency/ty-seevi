@@ -36,3 +36,21 @@ class MainTabBarController: UITabBarController {
         self.selectedIndex = 2
     }
 }
+
+// MARK: UITabBarController protocols
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
+        let fromView: UIView = tabBarController.selectedViewController!.view
+        let toView  : UIView = viewController.view
+        if fromView == toView {
+            return false
+        }
+        //Custom transition animation on tab selection
+        UIView.transition(from: fromView, to: toView, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
+            
+        }
+        return true
+    }
+}
