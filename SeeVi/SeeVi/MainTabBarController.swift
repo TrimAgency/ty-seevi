@@ -49,7 +49,6 @@ class MainTabBarController: UITabBarController {
 extension MainTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
-        
         let fromView: UIView = tabBarController.selectedViewController!.view
         let toView  : UIView = viewController.view
         if fromView == toView {
