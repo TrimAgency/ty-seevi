@@ -23,21 +23,24 @@ class MainTabBarController: UITabBarController {
     // MARK: - Sets up TabBarController indexes/views
     
     fileprivate func setupTabs() {
+        let svMainFeedViewController = SeeViMainFeedViewController()
+        let svMainFeedNavController = UINavigationController(rootViewController: svMainFeedViewController)
+        
         let svSearchViewController = SeeViSearchViewController()
         let svFeedNavController = UINavigationController(rootViewController: svSearchViewController)
-        let placeHolderVC1 = UIViewController()
+        
         let placeHolderVC2 = UIViewController()
         let placeHolderVC3 = UIViewController()
         let placeHolderVC4 = UIViewController()
         
         //Configure viewcontrollers in tabbarcontroller
-        placeHolderVC1.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
+        svMainFeedNavController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
         svFeedNavController.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
         placeHolderVC2.tabBarItem = UITabBarItem(title: "Add", image: nil, tag: 2)
         placeHolderVC3.tabBarItem = UITabBarItem(title: "Notifs", image: nil, tag: 3)
         placeHolderVC4.tabBarItem = UITabBarItem(title: "User", image: nil, tag: 4)
         //Add viewcontrollers
-        self.setViewControllers([placeHolderVC1, svFeedNavController, placeHolderVC2, placeHolderVC3, placeHolderVC4], animated: true)
+        self.setViewControllers([svMainFeedNavController, svFeedNavController, placeHolderVC2, placeHolderVC3, placeHolderVC4], animated: true)
         self.selectedIndex = 0
         
         self.delegate = self

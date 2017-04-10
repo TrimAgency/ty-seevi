@@ -13,7 +13,7 @@ import Stevia
 
 class SeeViSearchViewController: UIViewController {
     
-    // MARK: - Views
+    // MARK: - View assets
     var googleMap = GMSMapView()
     var searchButton = UIBarButtonItem()
     var searchResultsTable = UITableViewController()

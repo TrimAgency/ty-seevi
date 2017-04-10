@@ -15,8 +15,9 @@
 		10779DF61E9C142300287557 /* SeeViTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DF51E9C142300287557 /* SeeViTests.swift */; };
 		10779E011E9C142300287557 /* SeeViUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E001E9C142300287557 /* SeeViUITests.swift */; };
 		10779E101E9C16D800287557 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E0F1E9C16D800287557 /* MainTabBarController.swift */; };
-		10779E131E9C172400287557 /* SeeViMainFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E121E9C172400287557 /* SeeViMainFeedController.swift */; };
+		10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E121E9C172400287557 /* SeeViSearchViewController.swift */; };
 		10779E161E9C24BB00287557 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E151E9C24BB00287557 /* UIColor.swift */; };
+		10DCFC7F1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCFC7E1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift */; };
 		94721EDBCA10C8D7E4FA01FA /* Pods_SeeViTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB9A878A6A9C4181B3DC7E /* Pods_SeeViTests.framework */; };
 		A926B5D011383368EBCFA549 /* Pods_SeeVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B05481957BF2F2A59439E7 /* Pods_SeeVi.framework */; };
 		CDE7B9458BE3ABCFF1B9C730 /* Pods_SeeViUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D958122A69F332734DB888 /* Pods_SeeViUITests.framework */; };
@@ -55,8 +56,9 @@
 		10779E001E9C142300287557 /* SeeViUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeViUITests.swift; sourceTree = "<group>"; };
 		10779E021E9C142300287557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10779E0F1E9C16D800287557 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		10779E121E9C172400287557 /* SeeViMainFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViMainFeedController.swift; sourceTree = "<group>"; };
+		10779E121E9C172400287557 /* SeeViSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViSearchViewController.swift; sourceTree = "<group>"; };
 		10779E151E9C24BB00287557 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		10DCFC7E1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViMainFeedViewController.swift; sourceTree = "<group>"; };
 		116E4F1A1548294BF50407B4 /* Pods-SeeViTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4664814C9453548D34778AF8 /* Pods-SeeVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi.release.xcconfig"; sourceTree = "<group>"; };
 		586459E8617230A53872667D /* Pods-SeeVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				10779DE01E9C142300287557 /* AppDelegate.swift */,
+				10779E171E9C3B2A00287557 /* SearchControllers */,
 				10779E141E9C24A200287557 /* AssetExtensions */,
 				10779E111E9C16FD00287557 /* FeedControllers */,
 				10779E0E1E9C16BA00287557 /* Custom */,
@@ -175,7 +178,7 @@
 		10779E111E9C16FD00287557 /* FeedControllers */ = {
 			isa = PBXGroup;
 			children = (
-				10779E121E9C172400287557 /* SeeViMainFeedController.swift */,
+				10DCFC7E1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift */,
 			);
 			name = FeedControllers;
 			sourceTree = "<group>";
@@ -186,6 +189,14 @@
 				10779E151E9C24BB00287557 /* UIColor.swift */,
 			);
 			name = AssetExtensions;
+			sourceTree = "<group>";
+		};
+		10779E171E9C3B2A00287557 /* SearchControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10779E121E9C172400287557 /* SeeViSearchViewController.swift */,
+			);
+			name = SearchControllers;
 			sourceTree = "<group>";
 		};
 		331E4596A920351A9C934BA1 /* Frameworks */ = {
@@ -480,9 +491,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				10779DE31E9C142300287557 /* ViewController.swift in Sources */,
-				10779E131E9C172400287557 /* SeeViMainFeedController.swift in Sources */,
+				10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */,
 				10779DE11E9C142300287557 /* AppDelegate.swift in Sources */,
 				10779E101E9C16D800287557 /* MainTabBarController.swift in Sources */,
+				10DCFC7F1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift in Sources */,
 				10779E161E9C24BB00287557 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
