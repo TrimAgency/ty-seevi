@@ -66,23 +66,23 @@ extension MainTabBarController: UITabBarControllerDelegate {
     
     // MARK: - Configure custom center button
     fileprivate func drawMiddleButton() {
-        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+        let addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
     
-        var menuButtonFrame = menuButton.frame
-        menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height
-        menuButtonFrame.origin.x = view.bounds.width/2 - menuButtonFrame.size.width/2
-        menuButton.frame = menuButtonFrame
-        menuButton.backgroundColor = UIColor.white
-        menuButton.layer.cornerRadius = menuButtonFrame.height/2
-        menuButton.setImage(UIImage(named: "plus"), for: .normal)
-        menuButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .touchUpInside)
+        var addButtonFrame = addButton.frame
+        addButtonFrame.origin.y = view.bounds.height - addButtonFrame.height
+        addButtonFrame.origin.x = view.bounds.width/2 - addButtonFrame.size.width/2
+        addButton.frame = addButtonFrame
+        addButton.backgroundColor = UIColor.white
+        addButton.layer.cornerRadius = addButtonFrame.height/2
+        addButton.setImage(UIImage(named: "plus"), for: .normal)
+        addButton.addTarget(self, action: #selector(addButtonAction(sender:)), for: .touchUpInside)
     
-        view.addSubview(menuButton)
+        view.addSubview(addButton)
         view.layoutIfNeeded()
     }
     
     // Menu Button Touch Action
-    func menuButtonAction(sender: UIButton) {
+    func addButtonAction(sender: UIButton) {
         self.selectedIndex = 2
     }
 }
