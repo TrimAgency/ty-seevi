@@ -15,14 +15,23 @@ class SVPaymentsViewController: UIViewController {
     //MARK: - Payments controllers
     var payMethodsTable = UITableView()
     
-    // MARK: - View assets
+    //MARK: - View data
+    var payMethods = [SVPaymentMethod]() {
+        didSet {
+            payMethodsTable.reloadData()
+        }
+    }
     
+    // MARK: - View assets
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        payMethodsTable.register(UITableViewCell.self, forCellReuseIdentifier: "PaymentCell")
+        payMethodsTable.delegate = self
+        payMethodsTable.dataSource = self
+        payMethodsTable.register(SVPaymentMethodCell.self, forCellReuseIdentifier: "PaymentCell")
         
         setupView()
+        seedJunkData()
     }
     
     fileprivate func setupView() {
@@ -35,6 +44,31 @@ class SVPaymentsViewController: UIViewController {
         
         view.backgroundColor = UIColor.svDarkBlue
     }
+    
+    //Add fake card data
+    fileprivate func seedJunkData() {
+        var emptyObjs = [SVPaymentMethod]()
+        var method = SVPaymentMethod()
+        
+        for _ in 0...6 {
+            method.cardNam = "Ty Monkey"
+            method.cardNumber = "0000 0000 0000 0000"
+            method.cardDate = "02/12"
+            method.cvvNum = "234"
+            
+            emptyObjs.append(method)
+        }
+        payMethods = emptyObjs
+    }
+}
+
+// MARK: - Controller protocols
+
+extension SVPaymentsViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.frame.height / 4
+    }
 }
 
 extension SVPaymentsViewController : UITableViewDataSource {
@@ -44,11 +78,17 @@ extension SVPaymentsViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return payMethods.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell")! as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell") as! SVPaymentMethodCell
+        
+        if !payMethods.isEmpty {                       // Verify a filled payment collection
+            cell.bankObject = payMethods[indexPath.row]
+        }
         return cell
     }
 }
+
+
