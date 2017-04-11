@@ -38,11 +38,11 @@ class SVProfileSettingsCell: UITableViewCell {
         
     }
     
-    func setupView() {
+   fileprivate func setupView() {
         contentView.sv(descriptionLabel, userValLabel, viewPassBtn)
         contentView.layout(
             0,
-            |-descriptionLabel-userValLabel-viewPassBtn| ~ contentView.frame.height
+            |-descriptionLabel-userValLabel-viewPassBtn-| ~ contentView.frame.height
         )
         
         // MARK: - Additional layouts
@@ -51,6 +51,7 @@ class SVProfileSettingsCell: UITableViewCell {
         descriptionLabel.textColor = UIColor.black
         descriptionLabel.font = UIFont.systemFont(ofSize: 22)
         
+        viewPassBtn.setImage(UIImage(named: "eye"), for: .normal)
         viewPassBtn.isHidden = true
         
         userValLabel.textColor = UIColor.lightGray

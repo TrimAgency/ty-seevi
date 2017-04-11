@@ -57,6 +57,35 @@ class SVUserSettingsTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc fileprivate func selectButtonForCell(sender: AnyObject) {
+        let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
+        let button = sender as! UIButton
+        
+        //Bouncy button animation on friend select/deselect
+        UIView.animate(withDuration: 0.2, animations: {
+            button.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            
+        }, completion: { _ in
+            UIView.animate(withDuration: 2.0,
+                           delay: 0,
+                           usingSpringWithDamping: 0.2,
+                           initialSpringVelocity: 6.0,
+                           options: .allowUserInteraction,
+                           animations: { [] in
+                            button.transform = .identity
+            }, completion: nil)
+        })
+        
+        if let index = self.tableView.indexPathForRow(at: buttonPosition)?.row {
+            processButtonSelection(index: index)
+        }
+    }
+    
+    fileprivate func processButtonSelection(index: Int) {
+        //        users[index].WasSelected = !users[index].WasSelected
+        
+    }
+    
     // MARK: - Controller protocols
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,7 +123,8 @@ class SVUserSettingsTableViewController: UITableViewController {
                 postCell.descriptionLabel.text = passTitle[indexPath.row]
                 postCell.userValLabel.text = passValues[indexPath.row]
                 postCell.isPass = true
-                postCell.isUserInteractionEnabled = false
+                postCell.viewPassBtn.tag = indexPath.row
+                postCell.viewPassBtn.addTarget(self, action: #selector(selectButtonForCell(sender:)), for: .touchUpInside)
                 return postCell
             } else {
                 postCell.descriptionLabel.text = "Change password"
