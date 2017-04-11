@@ -15,8 +15,10 @@ class SVProfileViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProfileCell")
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(SVProfileUserCell.self, forCellReuseIdentifier: "ProfileCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
     }
     
     fileprivate func setupView() {
@@ -29,19 +31,47 @@ class SVProfileViewController: UITableViewController {
         return 2
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 10
+        default:
+            break
+        }
+        
+        return 0
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell")! as UITableViewCell
+        let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
         let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell")! as UITableViewCell
         switch indexPath.section {
-            case 0:
-                return profileCell
-            case 1:
-                return postCell
-            default:
-                break
+        case 0:
+            return profileCell
+        case 1:
+            return postCell
+        default:
+            break
         }
         
         return UITableViewCell() //Defaults to standard uninitialized cell
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return view.frame.height / 3
+        case 1:
+            return view.frame.height / 6
+        default:
+            break
+        }
+        
+        return 0
+    }
+    
 }

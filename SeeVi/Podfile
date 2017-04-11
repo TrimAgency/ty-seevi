@@ -10,6 +10,7 @@ target 'SeeVi' do
   pod ‘Alamofire’
   pod ’SwiftyJSON’
   pod ‘GoogleMaps’
+  pod ‘SDWebImage’
 
   target 'SeeViTests' do
     inherit! :search_paths

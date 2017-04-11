@@ -31,16 +31,16 @@ class MainTabBarController: UITabBarController {
         
         let placeHolderVC2 = UIViewController()
         let placeHolderVC3 = UIViewController()
-        let placeHolderVC4 = UIViewController()
+        let svProfileViewController = SVProfileViewController()
         
         //Configure viewcontrollers in tabbarcontroller
         svMainFeedNavController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
         svFeedNavController.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
         placeHolderVC2.tabBarItem = UITabBarItem(title: "Add", image: nil, tag: 2)
         placeHolderVC3.tabBarItem = UITabBarItem(title: "Notifs", image: nil, tag: 3)
-        placeHolderVC4.tabBarItem = UITabBarItem(title: "User", image: nil, tag: 4)
+        svProfileViewController.tabBarItem = UITabBarItem(title: "User", image: nil, tag: 4)
         //Add viewcontrollers
-        self.setViewControllers([svMainFeedNavController, svFeedNavController, placeHolderVC2, placeHolderVC3, placeHolderVC4], animated: true)
+        self.setViewControllers([svMainFeedNavController, svFeedNavController, placeHolderVC2, placeHolderVC3, svProfileViewController], animated: true)
         self.selectedIndex = 0
         
         self.delegate = self
