@@ -14,6 +14,7 @@ class SVUserSettingsTableViewController: UITableViewController {
     // MARK: - View assets
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
+    var editSettingViewController = SVEditUserViewController()
     
     //MARK : - View data
     var infoTitles = ["Full name", "E-mail"]
@@ -125,6 +126,7 @@ class SVUserSettingsTableViewController: UITableViewController {
                 postCell.isPass = true
                 postCell.viewPassBtn.tag = indexPath.row
                 postCell.viewPassBtn.addTarget(self, action: #selector(selectButtonForCell(sender:)), for: .touchUpInside)
+                postCell.separatorInset = UIEdgeInsetsMake(0, view.bounds.width/2.0, 0, view.bounds.width/2.0)
                 return postCell
             } else {
                 postCell.descriptionLabel.text = "Change password"
@@ -136,6 +138,21 @@ class SVUserSettingsTableViewController: UITableViewController {
         }
         
         return UITableViewCell() //Defaults to standard uninitialized cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Trigger transition to edit viewcontroller for cells with indicators
+        switch indexPath.section {
+        case 2:
+            if indexPath.row == 0 {
+                break
+            } else {
+                navigationController?.pushViewController(editSettingViewController, animated: true)
+            }
+        default:
+            navigationController?.pushViewController(editSettingViewController, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

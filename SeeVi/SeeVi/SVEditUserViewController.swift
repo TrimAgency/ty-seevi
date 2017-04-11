@@ -19,6 +19,6 @@ class SVEditUserViewController: UIViewController {
     }
     
     fileprivate func setupView() {
-        
+        view.backgroundColor = UIColor.white
     }
 }
