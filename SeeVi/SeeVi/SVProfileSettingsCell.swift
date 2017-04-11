@@ -42,6 +42,7 @@ class SVProfileSettingsCell: UITableViewCell {
         )
         
         // MARK: - Additional layouts
+        contentView.backgroundColor = UIColor.white
         
         descriptionLabel.textColor = UIColor.black
         descriptionLabel.font = UIFont.systemFont(ofSize: 22)
