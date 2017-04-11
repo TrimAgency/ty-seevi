@@ -11,6 +11,7 @@
 		104E1BC11E9D3B790095E742 /* SVEditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */; };
 		104E1BC31E9D688F0095E742 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC21E9D688F0095E742 /* UIFont.swift */; };
 		104E1BC51E9D87BD0095E742 /* SVPaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC41E9D87BD0095E742 /* SVPaymentsViewController.swift */; };
+		104E1BC71E9D8EF50095E742 /* SVPaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */; };
 		10779DE11E9C142300287557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE01E9C142300287557 /* AppDelegate.swift */; };
 		10779DE31E9C142300287557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE21E9C142300287557 /* ViewController.swift */; };
 		10779DE61E9C142300287557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10779DE41E9C142300287557 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVEditUserViewController.swift; sourceTree = "<group>"; };
 		104E1BC21E9D688F0095E742 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		104E1BC41E9D87BD0095E742 /* SVPaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentsViewController.swift; sourceTree = "<group>"; };
+		104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentMethodCell.swift; sourceTree = "<group>"; };
 		10779DDD1E9C142300287557 /* SeeVi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeVi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779DE01E9C142300287557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10779DE21E9C142300287557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				10DCFC811E9C44B000ADAD9D /* MainFeedTableCell.swift */,
 				10DCFC861E9C624A00ADAD9D /* SVProfileUserCell.swift */,
 				101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */,
+				104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */,
 				10DCFC851E9C5E2400ADAD9D /* SVProfileViewController.swift in Sources */,
 				10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */,
+				104E1BC71E9D8EF50095E742 /* SVPaymentMethodCell.swift in Sources */,
 				10DCFC871E9C624A00ADAD9D /* SVProfileUserCell.swift in Sources */,
 				10779DE11E9C142300287557 /* AppDelegate.swift in Sources */,
 				104E1BC51E9D87BD0095E742 /* SVPaymentsViewController.swift in Sources */,
