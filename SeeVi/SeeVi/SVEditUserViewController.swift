@@ -39,13 +39,15 @@ class SVEditUserViewController: UIViewController {
         )
         
         // MARK: Additional layouts
+        self.title = "Edit Profile"
         
         view.backgroundColor = UIColor.white
-        
-        editingLabel.text = "Edit"
+
+        editingLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        editingLabel.textColor = UIColor.svWarmGrey
         editingLabel.textAlignment = .center
         
-        editTextField.placeholder = "Add new information..."
+        editTextField.placeholder = "Add new profile info..."
         editTextField.textAlignment = .center
         editTextField.centerVertically()
     }
