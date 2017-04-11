@@ -14,6 +14,15 @@ class SVUserSettingsTableViewController: UITableViewController {
     // MARK: - View assets
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
+    var editSettingViewController = SVEditUserViewController()
+    var postCell = SVProfileSettingsCell()
+    
+    //MARK : - View data
+    var infoTitles = ["Full name", "E-mail"]
+    var infoValues = ["Ty Daniels", "ty@ty.com"]
+    
+    var passTitle = ["Current password"]
+    var passValues = ["12345667"]
     
     // MARK: - Lifecycle
     
@@ -25,7 +34,7 @@ class SVUserSettingsTableViewController: UITableViewController {
         
         //Link unique reuse-identifiers
         tableView.register(SVProfileUserCell.self, forCellReuseIdentifier: "ProfileCell")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
+        tableView.register(SVProfileSettingsCell.self, forCellReuseIdentifier: "PostCell")
         
         setupView()
     }
@@ -35,24 +44,47 @@ class SVUserSettingsTableViewController: UITableViewController {
     fileprivate func setupView() {
 
         //Setup navigationItem barbutton actions
-        
-        let closeButton  = UIButton(type: .custom)
-        closeButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        closeButton.setImage(UIImage(named: "letter-x"), for: .normal)
-        closeButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        let leftBarButton = UIBarButtonItem(customView: closeButton)
-        navigationItem.leftBarButtonItem = leftBarButton //Left
+//        let closeButton  = UIButton(type: .custom)
+//        closeButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+//        closeButton.setImage(UIImage(named: "letter-x"), for: .normal)
+//        closeButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+//        let leftBarButton = UIBarButtonItem(customView: closeButton)
+//        navigationItem.leftBarButtonItem = leftBarButton //Left
         
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveChanges))
-        rightBarButton.title = "Save"
         navigationItem.rightBarButtonItem = rightBarButton //Right
     }
     
-    @objc fileprivate func goBack() {
+    @objc fileprivate func saveChanges() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc fileprivate func saveChanges() {
+    @objc fileprivate func selectButtonForCell(sender: AnyObject) {
+        let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
+        let button = sender as! UIButton
+        
+        //Bouncy button animation on friend select/deselect
+        UIView.animate(withDuration: 0.2, animations: {
+            button.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            
+        }, completion: { _ in
+            UIView.animate(withDuration: 2.0,
+                           delay: 0,
+                           usingSpringWithDamping: 0.2,
+                           initialSpringVelocity: 6.0,
+                           options: .allowUserInteraction,
+                           animations: { [] in
+                            button.transform = .identity
+            }, completion: nil)
+        })
+        
+        if let index = self.tableView.indexPathForRow(at: buttonPosition)?.row {
+            processButtonSelection(index: index)
+        }
+    }
+    
+    fileprivate func processButtonSelection(index: Int) {
+        //        users[index].WasSelected = !users[index].WasSelected
         
     }
     
@@ -63,14 +95,13 @@ class SVUserSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         switch section {
         case 0:
             return 1
         case 1:
-            return 2
+            return infoTitles.count
         case 2:
-            return 3
+            return 2
         default:
             break
         }
@@ -81,21 +112,59 @@ class SVUserSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
-        let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell")! as UITableViewCell
+        postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
+        
         switch indexPath.section {
         case 0:
             return profileCell
         case 1:
+            postCell.descriptionLabel.text = infoTitles[indexPath.row]
+            postCell.userValLabel.text = infoValues[indexPath.row]
             postCell.accessoryType = .disclosureIndicator
             return postCell
         case 2:
-            postCell.accessoryType = .disclosureIndicator
-            return postCell
+            if indexPath.row == 0 {
+                postCell.descriptionLabel.text = passTitle[indexPath.row]
+                postCell.userValLabel.text = passValues[indexPath.row]
+                postCell.isPass = true
+                postCell.viewPassBtn.tag = indexPath.row
+                postCell.viewPassBtn.addTarget(self, action: #selector(selectButtonForCell(sender:)), for: .touchUpInside)
+                postCell.separatorInset = UIEdgeInsetsMake(0, view.bounds.width/2.0, 0, view.bounds.width/2.0)
+                return postCell
+            } else {
+                postCell.descriptionLabel.text = "Change password"
+                postCell.accessoryType = .disclosureIndicator
+                return postCell
+            }
         default:
             break
         }
         
         return UITableViewCell() //Defaults to standard uninitialized cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Prep cell data to pass to edit viewcontroller
+        let index = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: index!) as! SVProfileSettingsCell
+
+        let titleToPass = currentCell.descriptionLabel.text
+        let valueToPass = currentCell.userValLabel.text
+        editSettingViewController.editingLabel.text = titleToPass
+        editSettingViewController.editTextField.text = valueToPass
+        
+        //Trigger transition to edit viewcontroller for cells with indicators
+        switch indexPath.section {
+        case 2:
+            if indexPath.row == 0 {
+                break
+            } else {
+                navigationController?.pushViewController(editSettingViewController, animated: true)
+            }
+        default:
+            navigationController?.pushViewController(editSettingViewController, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -118,7 +187,7 @@ class SVUserSettingsTableViewController: UITableViewController {
         case 1:
             return "User information"
         case 2:
-            return "Change password"
+            return "User security"
         default:
             return nil
         }

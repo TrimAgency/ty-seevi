@@ -14,6 +14,7 @@ import Stevia
 class SVProfileUserCell: UITableViewCell {
     
     //MARK: View assets
+    
     var mainBackgroundView = UIView()
     var avatar = UIImageView(image: UIImage(named: "user-placeholder"))
     var tappableName = UILabel()
@@ -21,10 +22,12 @@ class SVProfileUserCell: UITableViewCell {
     var selectBtn = UIButton()
     
     //MARK: Reused view data
+    
     var avatarString: String? = ""
     var name: String? = ""
     
     //MARK: - Lifecycle
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -43,14 +46,14 @@ class SVProfileUserCell: UITableViewCell {
     }
     
     func setupView() {
-        self.contentView.sv(mainBackgroundView)
-        mainBackgroundView.sv(avatar, tappableName, selectBtn, settingsButton)
         
-        self.contentView.layout(
+        contentView.sv(mainBackgroundView)
+        contentView.layout(
             0,
             |-mainBackgroundView-| ~ self.contentView.frame.height
         )
         
+        mainBackgroundView.sv(avatar, tappableName, selectBtn, settingsButton)
         mainBackgroundView.layout(
             (contentView.frame.height / 4), //Set very top margin based on contentview frame height
             avatar,
@@ -84,9 +87,7 @@ class SVProfileUserCell: UITableViewCell {
         tappableName.text = "Ty Daniels"
         
         //Setup edit profile button
-        let editProfileAttrText = NSAttributedString(string: "Edit Profile",
-                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue]
-        )
+        let editProfileAttrText = NSAttributedString(string: "Edit Profile", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
         settingsButton.setAttributedTitle(editProfileAttrText, for: .normal)
     }
     
