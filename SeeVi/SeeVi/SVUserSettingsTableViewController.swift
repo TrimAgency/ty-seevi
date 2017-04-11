@@ -15,6 +15,7 @@ class SVUserSettingsTableViewController: UITableViewController {
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
     var editSettingViewController = SVEditUserViewController()
+    var postCell = SVProfileSettingsCell()
     
     //MARK : - View data
     var infoTitles = ["Full name", "E-mail"]
@@ -109,8 +110,10 @@ class SVUserSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
-        let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
+        postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
+        
         switch indexPath.section {
         case 0:
             return profileCell
@@ -141,6 +144,15 @@ class SVUserSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Prep cell data to pass to edit viewcontroller
+        let index = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: index!) as! SVProfileSettingsCell
+
+        let titleToPass = currentCell.descriptionLabel.text
+        let valueToPass = currentCell.userValLabel.text
+        editSettingViewController.editingLabel.text = titleToPass
+        editSettingViewController.editTextField.text = valueToPass
         
         //Trigger transition to edit viewcontroller for cells with indicators
         switch indexPath.section {
