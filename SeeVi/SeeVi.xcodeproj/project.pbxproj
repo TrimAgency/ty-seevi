@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */; };
 		10779DE11E9C142300287557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE01E9C142300287557 /* AppDelegate.swift */; };
 		10779DE31E9C142300287557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE21E9C142300287557 /* ViewController.swift */; };
 		10779DE61E9C142300287557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10779DE41E9C142300287557 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		069D59AAC142E5332B1D570F /* Pods-SeeViTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.release.xcconfig"; sourceTree = "<group>"; };
+		101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProfileSettingsCell.swift; sourceTree = "<group>"; };
 		10779DDD1E9C142300287557 /* SeeVi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeVi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779DE01E9C142300287557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10779DE21E9C142300287557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				10DCFC811E9C44B000ADAD9D /* MainFeedTableCell.swift */,
 				10DCFC861E9C624A00ADAD9D /* SVProfileUserCell.swift */,
+				101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			files = (
 				10779DE31E9C142300287557 /* ViewController.swift in Sources */,
 				10DCFC891E9C699700ADAD9D /* SVUserSettingsTableViewController.swift in Sources */,
+				101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */,
 				10DCFC851E9C5E2400ADAD9D /* SVProfileViewController.swift in Sources */,
 				10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */,
 				10DCFC871E9C624A00ADAD9D /* SVProfileUserCell.swift in Sources */,

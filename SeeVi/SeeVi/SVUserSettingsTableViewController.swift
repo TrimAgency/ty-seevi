@@ -15,6 +15,13 @@ class SVUserSettingsTableViewController: UITableViewController {
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
     
+    //MARK : - View data
+    var infoTitles = ["Full name", "E-mail"]
+    var infoValues = ["Ty Daniels", "ty@ty.com"]
+    
+    var passTitle = ["Current password"]
+    var passValues = ["12345667"]
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -25,7 +32,7 @@ class SVUserSettingsTableViewController: UITableViewController {
         
         //Link unique reuse-identifiers
         tableView.register(SVProfileUserCell.self, forCellReuseIdentifier: "ProfileCell")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
+        tableView.register(SVProfileSettingsCell.self, forCellReuseIdentifier: "PostCell")
         
         setupView()
     }
@@ -35,7 +42,6 @@ class SVUserSettingsTableViewController: UITableViewController {
     fileprivate func setupView() {
 
         //Setup navigationItem barbutton actions
-        
         let closeButton  = UIButton(type: .custom)
         closeButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         closeButton.setImage(UIImage(named: "letter-x"), for: .normal)
@@ -68,9 +74,9 @@ class SVUserSettingsTableViewController: UITableViewController {
         case 0:
             return 1
         case 1:
-            return 2
+            return infoTitles.count
         case 2:
-            return 3
+            return passValues.count
         default:
             break
         }
@@ -81,14 +87,18 @@ class SVUserSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
-        let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell")! as UITableViewCell
+        let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
         switch indexPath.section {
         case 0:
             return profileCell
         case 1:
+            postCell.descriptionLabel.text = infoTitles[indexPath.row]
+            postCell.userValLabel.text = infoValues[indexPath.row]
             postCell.accessoryType = .disclosureIndicator
             return postCell
         case 2:
+            postCell.descriptionLabel.text = passTitle[indexPath.row]
+            postCell.userValLabel.text = passValues[indexPath.row]
             postCell.accessoryType = .disclosureIndicator
             return postCell
         default:
