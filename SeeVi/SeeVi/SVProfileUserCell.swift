@@ -15,7 +15,7 @@ class SVProfileUserCell: UITableViewCell {
     
     //MARK: View assets
     var mainBackgroundView = UIView()
-    var avatar: UIImageView = UIImageView()
+    var avatar = UIImageView(image: UIImage(named: "user-placeholder"))
     var tappableName = UILabel()
     var settingsButton = UIButton()
     var selectBtn = UIButton()
@@ -65,9 +65,9 @@ class SVProfileUserCell: UITableViewCell {
         
         mainBackgroundView.backgroundColor = UIColor.white
         
-        avatar.backgroundColor = UIColor.lightGray
         avatar.height(60)
         avatar.width(60)
+        avatar.backgroundColor = UIColor.lightGray
         avatar.layer.cornerRadius = 30
         avatar.layer.shadowColor = UIColor.black.cgColor
         avatar.layer.shadowOpacity = 1

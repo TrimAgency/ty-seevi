@@ -22,7 +22,20 @@ class SVProfileViewController: UITableViewController {
     }
     
     fileprivate func setupView() {
+        
+        view.layout(
+            100,
+            tableView
+        )
+        // MARK: Additional layouts
         self.tableView.backgroundColor = UIColor.white
+    }
+    
+    // MARK: - Present user settings
+    func showSettings() {
+        let settingsViewController = SVUserSettingsTableViewController()
+        let settingsNavController = UINavigationController(rootViewController: settingsViewController)
+        self.present(settingsNavController, animated: true, completion: nil)
     }
     
     // MARK: - Controller protocols
@@ -51,6 +64,7 @@ class SVProfileViewController: UITableViewController {
         let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell")! as UITableViewCell
         switch indexPath.section {
         case 0:
+            profileCell.settingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
             return profileCell
         case 1:
             return postCell
