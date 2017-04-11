@@ -116,6 +116,7 @@ class SVUserSettingsTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
+            profileCell.isEditingProfile = true //Set bool to modify profile cell layout for settings
             return profileCell
         case 1:
             postCell.descriptionLabel.text = infoTitles[indexPath.row]
@@ -145,10 +146,15 @@ class SVUserSettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // No transition for section 0
+        guard indexPath.section != 0 else {
+            return
+        }
+        
         // Prep cell data to pass to edit viewcontroller
         let index = tableView.indexPathForSelectedRow
         let currentCell = tableView.cellForRow(at: index!) as! SVProfileSettingsCell
-
+        
         let titleToPass = currentCell.descriptionLabel.text
         let valueToPass = currentCell.userValLabel.text
         editSettingViewController.editingLabel.text = titleToPass

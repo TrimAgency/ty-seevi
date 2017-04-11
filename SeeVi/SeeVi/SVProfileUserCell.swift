@@ -22,9 +22,9 @@ class SVProfileUserCell: UITableViewCell {
     var selectBtn = UIButton()
     
     //MARK: Reused view data
-    
     var avatarString: String? = ""
     var name: String? = ""
+    var isEditingProfile: Bool = false
     
     //MARK: - Lifecycle
     
@@ -68,10 +68,10 @@ class SVProfileUserCell: UITableViewCell {
         
         mainBackgroundView.backgroundColor = UIColor.white
         
-        avatar.height(60)
-        avatar.width(60)
+        avatar.height(80)
+        avatar.width(80)
         avatar.backgroundColor = UIColor.lightGray
-        avatar.layer.cornerRadius = 30
+        avatar.layer.cornerRadius = 40
         avatar.layer.shadowColor = UIColor.black.cgColor
         avatar.layer.shadowOpacity = 1
         avatar.layer.shadowOffset = .zero
@@ -87,7 +87,13 @@ class SVProfileUserCell: UITableViewCell {
         tappableName.text = "Ty Daniels"
         
         //Setup edit profile button
-        let editProfileAttrText = NSAttributedString(string: "Edit Profile", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
+        var editProfileAttrText = NSAttributedString(string: "Edit Profile", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
+        
+        if isEditingProfile {
+            tappableName.isHidden = true
+            editProfileAttrText = NSAttributedString(string: "Update Image", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
+        }
+        
         settingsButton.setAttributedTitle(editProfileAttrText, for: .normal)
     }
     
