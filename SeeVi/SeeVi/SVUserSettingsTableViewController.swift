@@ -145,10 +145,15 @@ class SVUserSettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // No transition for section 0
+        guard indexPath.section != 0 else {
+            return
+        }
+        
         // Prep cell data to pass to edit viewcontroller
         let index = tableView.indexPathForSelectedRow
         let currentCell = tableView.cellForRow(at: index!) as! SVProfileSettingsCell
-
+        
         let titleToPass = currentCell.descriptionLabel.text
         let valueToPass = currentCell.userValLabel.text
         editSettingViewController.editingLabel.text = titleToPass
