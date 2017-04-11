@@ -42,24 +42,19 @@ class SVUserSettingsTableViewController: UITableViewController {
     fileprivate func setupView() {
 
         //Setup navigationItem barbutton actions
-        let closeButton  = UIButton(type: .custom)
-        closeButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        closeButton.setImage(UIImage(named: "letter-x"), for: .normal)
-        closeButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        let leftBarButton = UIBarButtonItem(customView: closeButton)
-        navigationItem.leftBarButtonItem = leftBarButton //Left
+//        let closeButton  = UIButton(type: .custom)
+//        closeButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+//        closeButton.setImage(UIImage(named: "letter-x"), for: .normal)
+//        closeButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+//        let leftBarButton = UIBarButtonItem(customView: closeButton)
+//        navigationItem.leftBarButtonItem = leftBarButton //Left
         
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveChanges))
-        rightBarButton.title = "Save"
         navigationItem.rightBarButtonItem = rightBarButton //Right
     }
     
-    @objc fileprivate func goBack() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @objc fileprivate func saveChanges() {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Controller protocols
@@ -69,14 +64,13 @@ class SVUserSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         switch section {
         case 0:
             return 1
         case 1:
             return infoTitles.count
         case 2:
-            return passValues.count
+            return 2
         default:
             break
         }
@@ -85,7 +79,6 @@ class SVUserSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
         let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
         switch indexPath.section {
@@ -97,10 +90,16 @@ class SVUserSettingsTableViewController: UITableViewController {
             postCell.accessoryType = .disclosureIndicator
             return postCell
         case 2:
-            postCell.descriptionLabel.text = passTitle[indexPath.row]
-            postCell.userValLabel.text = passValues[indexPath.row]
-            postCell.accessoryType = .disclosureIndicator
-            return postCell
+            if indexPath.row == 0 {
+                postCell.descriptionLabel.text = passTitle[indexPath.row]
+                postCell.userValLabel.text = passValues[indexPath.row]
+                postCell.isUserInteractionEnabled = false
+                return postCell
+            } else {
+                postCell.descriptionLabel.text = "Change password"
+                postCell.accessoryType = .disclosureIndicator
+                return postCell
+            }
         default:
             break
         }
@@ -128,7 +127,7 @@ class SVUserSettingsTableViewController: UITableViewController {
         case 1:
             return "User information"
         case 2:
-            return "Change password"
+            return "User security"
         default:
             return nil
         }

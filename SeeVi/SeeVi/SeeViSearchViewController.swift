@@ -75,6 +75,8 @@ class SeeViSearchViewController: UIViewController {
     }
 }
 
+// MARK: - Searchbar delegates
+
 extension SeeViSearchViewController : UISearchBarDelegate {
     
 }

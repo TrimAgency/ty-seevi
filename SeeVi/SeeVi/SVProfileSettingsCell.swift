@@ -13,10 +13,12 @@ import Stevia
 class SVProfileSettingsCell: UITableViewCell {
     
     // MARK: View assets
+    
     var descriptionLabel = UILabel()
     var userValLabel = UILabel()
     
     //MARK: - Lifecycle
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
