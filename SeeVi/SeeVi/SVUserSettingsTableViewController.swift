@@ -15,6 +15,7 @@ class SVUserSettingsTableViewController: UITableViewController {
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
     var editSettingViewController = SVEditUserViewController()
+    var paymentsViewController = SVPaymentsViewController()
     var postCell = SVProfileSettingsCell()
     
     //MARK : - View data
@@ -155,6 +156,8 @@ class SVUserSettingsTableViewController: UITableViewController {
         let currentCell = tableView.cellForRow(at: index!) as! SVProfileSettingsCell
         let titleToPass = currentCell.descriptionLabel.text
         let valueToPass = currentCell.userValLabel.text
+        
+        //Set var values for the settings detailview
         editSettingViewController.editingLabel.text = titleToPass
         editSettingViewController.editTextField.text = valueToPass
         
@@ -166,6 +169,8 @@ class SVUserSettingsTableViewController: UITableViewController {
             } else {
                 navigationController?.pushViewController(editSettingViewController, animated: true)
             }
+        case 5:
+            navigationController?.pushViewController(paymentsViewController, animated: true)
         default:
             navigationController?.pushViewController(editSettingViewController, animated: true)
         }
