@@ -90,6 +90,7 @@ class SVProfileUserCell: UITableViewCell {
         var editProfileAttrText = NSAttributedString(string: "Edit Profile", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
         
         if isEditingProfile {
+            tappableName.frame = .zero
             tappableName.isHidden = true
             editProfileAttrText = NSAttributedString(string: "Update Image", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
         }

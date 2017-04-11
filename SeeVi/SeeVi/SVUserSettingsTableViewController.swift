@@ -42,15 +42,8 @@ class SVUserSettingsTableViewController: UITableViewController {
     // MARK: - Layout views
     
     fileprivate func setupView() {
-
-        //Setup navigationItem barbutton actions
-//        let closeButton  = UIButton(type: .custom)
-//        closeButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-//        closeButton.setImage(UIImage(named: "letter-x"), for: .normal)
-//        closeButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-//        let leftBarButton = UIBarButtonItem(customView: closeButton)
-//        navigationItem.leftBarButtonItem = leftBarButton //Left
         
+        // MARK : Additional layouts
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveChanges))
         navigationItem.rightBarButtonItem = rightBarButton //Right
     }
@@ -59,12 +52,12 @@ class SVUserSettingsTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Make viewController updates from SVProfileSettingsCell button
     @objc fileprivate func selectButtonForCell(sender: AnyObject) {
         let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
         let button = sender as! UIButton
         
-        //Bouncy button animation on friend select/deselect
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.2, animations: { //Bouncy button animation on eye select/deselect
             button.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             
         }, completion: { _ in
@@ -91,7 +84,7 @@ class SVUserSettingsTableViewController: UITableViewController {
     // MARK: - Controller protocols
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,6 +95,8 @@ class SVUserSettingsTableViewController: UITableViewController {
             return infoTitles.count
         case 2:
             return 2
+        case 5:
+            return 1
         default:
             break
         }
@@ -137,6 +132,10 @@ class SVUserSettingsTableViewController: UITableViewController {
                 postCell.accessoryType = .disclosureIndicator
                 return postCell
             }
+        case 5:
+            postCell.descriptionLabel.text = "Payment methods"
+            postCell.accessoryType = .disclosureIndicator
+            return postCell
         default:
             break
         }
@@ -154,7 +153,6 @@ class SVUserSettingsTableViewController: UITableViewController {
         // Prep cell data to pass to edit viewcontroller
         let index = tableView.indexPathForSelectedRow
         let currentCell = tableView.cellForRow(at: index!) as! SVProfileSettingsCell
-        
         let titleToPass = currentCell.descriptionLabel.text
         let valueToPass = currentCell.userValLabel.text
         editSettingViewController.editingLabel.text = titleToPass
@@ -174,18 +172,14 @@ class SVUserSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellConstant = view.frame.height / 12
+        
         switch indexPath.section {
         case 0:
             return view.frame.height / 3
-        case 1:
-            return view.frame.height / 12
-        case 2:
-            return view.frame.height / 12
         default:
-            break
+            return cellConstant
         }
-        
-        return 0
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -194,6 +188,12 @@ class SVUserSettingsTableViewController: UITableViewController {
             return "User information"
         case 2:
             return "User security"
+        case 3:
+            return "Tags"
+        case 4:
+            return "Description"
+        case 5:
+            return "Billing"
         default:
             return nil
         }

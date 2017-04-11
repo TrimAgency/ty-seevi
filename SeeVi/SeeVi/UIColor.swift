@@ -29,4 +29,8 @@ extension UIColor {
     class var svWarmGrey: UIColor {
         return UIColor(white: 140.0 / 255.0, alpha: 1.0)
     }
+    
+    class var svDarkBlue: UIColor {
+        return UIColor(red: 10, green: 36, blue: 99, alpha: 1.0)
+    }
 }
