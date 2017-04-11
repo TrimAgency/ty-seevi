@@ -93,6 +93,7 @@ class SVUserSettingsTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 postCell.descriptionLabel.text = passTitle[indexPath.row]
                 postCell.userValLabel.text = passValues[indexPath.row]
+                postCell.isPass = true
                 postCell.isUserInteractionEnabled = false
                 return postCell
             } else {

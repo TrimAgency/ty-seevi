@@ -13,12 +13,14 @@ import Stevia
 class SVProfileSettingsCell: UITableViewCell {
     
     // MARK: View assets
-    
     var descriptionLabel = UILabel()
     var userValLabel = UILabel()
+    var viewPassBtn = UIButton()
+    
+    // MARK : Update views based on conditions
+    var isPass: Bool = false
     
     //MARK: - Lifecycle
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -37,10 +39,10 @@ class SVProfileSettingsCell: UITableViewCell {
     }
     
     func setupView() {
-        contentView.sv(descriptionLabel, userValLabel)
+        contentView.sv(descriptionLabel, userValLabel, viewPassBtn)
         contentView.layout(
             0,
-            |-descriptionLabel-userValLabel-| ~ contentView.frame.height
+            |-descriptionLabel-userValLabel-viewPassBtn| ~ contentView.frame.height
         )
         
         // MARK: - Additional layouts
@@ -49,8 +51,14 @@ class SVProfileSettingsCell: UITableViewCell {
         descriptionLabel.textColor = UIColor.black
         descriptionLabel.font = UIFont.systemFont(ofSize: 22)
         
+        viewPassBtn.isHidden = true
+        
         userValLabel.textColor = UIColor.lightGray
         userValLabel.font = UIFont.systemFont(ofSize: 22)
         userValLabel.textAlignment = .right
+        if isPass {
+            userValLabel.text = String(repeating: "*", count: (userValLabel.text?.characters.count)!)
+            viewPassBtn.isHidden = false
+        }
     }
 }

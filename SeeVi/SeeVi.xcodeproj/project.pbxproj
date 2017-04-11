@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */; };
+		104E1BC11E9D3B790095E742 /* SVEditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */; };
 		10779DE11E9C142300287557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE01E9C142300287557 /* AppDelegate.swift */; };
 		10779DE31E9C142300287557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE21E9C142300287557 /* ViewController.swift */; };
 		10779DE61E9C142300287557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10779DE41E9C142300287557 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		069D59AAC142E5332B1D570F /* Pods-SeeViTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.release.xcconfig"; sourceTree = "<group>"; };
 		101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProfileSettingsCell.swift; sourceTree = "<group>"; };
+		104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVEditUserViewController.swift; sourceTree = "<group>"; };
 		10779DDD1E9C142300287557 /* SeeVi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeVi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779DE01E9C142300287557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10779DE21E9C142300287557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				10DCFC841E9C5E2400ADAD9D /* SVProfileViewController.swift */,
 				10DCFC881E9C699700ADAD9D /* SVUserSettingsTableViewController.swift */,
+				104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */,
 			);
 			name = ProfileControllers;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 			files = (
 				10779DE31E9C142300287557 /* ViewController.swift in Sources */,
 				10DCFC891E9C699700ADAD9D /* SVUserSettingsTableViewController.swift in Sources */,
+				104E1BC11E9D3B790095E742 /* SVEditUserViewController.swift in Sources */,
 				101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */,
 				10DCFC851E9C5E2400ADAD9D /* SVProfileViewController.swift in Sources */,
 				10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */,
