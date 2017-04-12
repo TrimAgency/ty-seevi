@@ -12,6 +12,8 @@ import Stevia
 
 class SVProfileViewController: UITableViewController {
     
+    let users = AppDelegate().myUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,19 +21,55 @@ class SVProfileViewController: UITableViewController {
         tableView.delegate = self
         tableView.register(SVProfileUserCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
+        
+        //Add user data on load if Realm collection is empty
+        if users.count == 0 {
+            seedUser()
+        }
     }
     
     fileprivate func setupView() {
-        
         view.layout(
             100,
             tableView
         )
+        
         // MARK: Additional layouts
+        
         self.tableView.backgroundColor = UIColor.white
     }
     
+    // MARK: - Add spoofed user settings data
+    fileprivate func seedUser() {
+        let realmManager = AppDelegate().realm
+        let thisUser = SVUser()
+        
+        //User data
+        let imageData = UIImagePNGRepresentation(UIImage(named: "spoofed-image")!)! as NSData
+        thisUser.profileImg = imageData
+        thisUser.name = "John Doe"
+        thisUser.email = "Things@stuff.com"
+        thisUser.passWord = "supersecret"
+        thisUser.userDescription = "Seevi is literally my favorite app. Also, I like coffee."
+        
+        //Card data
+        let method = SVPaymentMethod()
+        for _ in 0...1 {
+            method.cardNam = "Ty Monkey"
+            method.cardNumber = "0000 0000 0000 0000"
+            method.cardDate = "02/12"
+            method.cvvNum = "234"
+            
+//            thisUser.payMethods[0] = method
+        }
+        
+        try! realmManager.write {() -> Void in
+            realmManager.add(thisUser)
+        }
+    }
+    
     // MARK: - Present user settings
+    
     func showSettings() {
         let settingsViewController = SVUserSettingsTableViewController()
         let settingsNavController = UINavigationController(rootViewController: settingsViewController)

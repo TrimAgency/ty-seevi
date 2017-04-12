@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct SVPaymentMethod {
-    var cardNumber: String? = ""
-    var cardDate: String? = "" //NOTE: This would likely be converted from actual NSDate
-    var cvvNum: String? = ""
-    var cardNam: String? = ""
+class SVPaymentMethod: Object {
+    dynamic var cardNumber: String? = ""
+    dynamic var cardDate: String? = "" //NOTE: This would likely be converted from actual NSDate
+    dynamic var cvvNum: String? = ""
+    dynamic var cardNam: String? = ""
 }

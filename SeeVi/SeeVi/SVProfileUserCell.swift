@@ -14,7 +14,6 @@ import Stevia
 class SVProfileUserCell: UITableViewCell {
     
     //MARK: View assets
-    
     var mainBackgroundView = UIView()
     var avatar = UIImageView(image: UIImage(named: "user-placeholder"))
     var tappableName = UILabel()
@@ -22,7 +21,8 @@ class SVProfileUserCell: UITableViewCell {
     var selectBtn = UIButton()
     
     //MARK: Reused view data
-    var avatarString: String? = ""
+    var myUser = AppDelegate().myUser.first
+    var avatarData: NSData? = nil
     var name: String? = ""
     var isEditingProfile: Bool = false
     
@@ -68,6 +68,9 @@ class SVProfileUserCell: UITableViewCell {
         
         mainBackgroundView.backgroundColor = UIColor.white
         
+        let imageFromData = UIImage(data: (myUser?.profileImg)! as Data)
+        avatar.image = imageFromData
+        avatar.layer.masksToBounds = true
         avatar.height(80)
         avatar.width(80)
         avatar.backgroundColor = UIColor.lightGray
@@ -84,7 +87,7 @@ class SVProfileUserCell: UITableViewCell {
         tappableName.backgroundColor = UIColor.clear
         tappableName.textColor = UIColor.black
         tappableName.textAlignment = .center
-        tappableName.text = "Ty Daniels"
+        tappableName.text = myUser?.name
         
         //Setup edit profile button
         var editProfileAttrText = NSAttributedString(string: "Edit Profile", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])

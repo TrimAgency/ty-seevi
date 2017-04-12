@@ -19,11 +19,9 @@ class SVUserSettingsTableViewController: UITableViewController {
     var postCell = SVProfileSettingsCell()
     
     //MARK : - View data
+    var thisUser = AppDelegate().myUser[0]
     var infoTitles = ["Full name", "E-mail"]
-    var infoValues = ["Ty Daniels", "ty@ty.com"]
-    
     var passTitle = ["Current password"]
-    var passValues = ["12345667"]
     
     // MARK: - Lifecycle
     
@@ -115,14 +113,20 @@ class SVUserSettingsTableViewController: UITableViewController {
             profileCell.isEditingProfile = true //Set bool to modify profile cell layout for settings
             return profileCell
         case 1:
-            postCell.descriptionLabel.text = infoTitles[indexPath.row]
-            postCell.userValLabel.text = infoValues[indexPath.row]
-            postCell.accessoryType = .disclosureIndicator
+            if indexPath.row == 0 {
+                postCell.descriptionLabel.text = infoTitles[indexPath.row]
+                postCell.userValLabel.text = thisUser.name
+                postCell.accessoryType = .disclosureIndicator
+            } else {
+                postCell.descriptionLabel.text = infoTitles[indexPath.row]
+                postCell.userValLabel.text = thisUser.email
+                postCell.accessoryType = .disclosureIndicator
+            }
             return postCell
         case 2:
             if indexPath.row == 0 {
                 postCell.descriptionLabel.text = passTitle[indexPath.row]
-                postCell.userValLabel.text = passValues[indexPath.row]
+                postCell.userValLabel.text = thisUser.passWord
                 postCell.isPass = true
                 postCell.viewPassBtn.tag = indexPath.row
                 postCell.viewPassBtn.addTarget(self, action: #selector(selectButtonForCell(sender:)), for: .touchUpInside)
