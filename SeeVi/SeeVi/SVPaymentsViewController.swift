@@ -19,7 +19,7 @@ class SVPaymentsViewController: UIViewController {
     
     //MARK: - View data
     
-    var payMethods = AppDelegate().myUser[0].payMethods {
+    var payMethods = AppDelegate().paymentMethods {
         didSet {
             payMethodsTable.reloadData()
         }

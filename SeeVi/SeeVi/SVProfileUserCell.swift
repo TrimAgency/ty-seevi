@@ -66,7 +66,7 @@ class SVProfileUserCell: UITableViewCell {
         
         //MARK: - Additional cell layouts
         
-        mainBackgroundView.backgroundColor = UIColor.white
+        mainBackgroundView.backgroundColor = UIColor.groupTableViewBackground
         
         let imageFromData = UIImage(data: (myUser?.profileImg)! as Data)
         avatar.image = imageFromData
@@ -95,6 +95,7 @@ class SVProfileUserCell: UITableViewCell {
         if isEditingProfile {
             tappableName.frame = .zero
             tappableName.isHidden = true
+
             editProfileAttrText = NSAttributedString(string: "Update Image", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
         }
         

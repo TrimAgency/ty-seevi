@@ -10,12 +10,23 @@ import Foundation
 import UIKit
 import Stevia
 
+protocol EditSettingDelegate {
+    func updateSettings()
+}
+
 class SVEditUserViewController: UIViewController {
     
     // MARK: - View assets
     var editingLabel = UILabel()
     var editTextField = UITextField()
     var doneButton = UIBarButtonItem()
+    
+    // MARK: - View data
+    let thisUser = AppDelegate().myUser[0]
+    var settingsDelegate: EditSettingDelegate?
+    
+    // MARK: - Realm manager
+    let realmManager = AppDelegate().realm
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -58,6 +69,28 @@ class SVEditUserViewController: UIViewController {
     }
     
     @objc fileprivate func saveChanges() {
-       navigationController?.popToRootViewController(animated: true)
+        let updateUser = realmManager.objects(SVUser.self).first
+        
+        if let updateVal = editTextField.text {
+            switch editingLabel.text! {
+            case "Full name":
+                try! realmManager.write {
+                    updateUser?.name = updateVal
+                }
+            case "E-mail":
+                try! realmManager.write {
+                    updateUser?.email = updateVal
+                }
+            case "Change password":
+                try! realmManager.write {
+                    updateUser?.passWord = updateVal
+                }
+            default:
+                break
+            }
+            
+            navigationController?.popToRootViewController(animated: true)
+            settingsDelegate?.updateSettings() //Trigger reload in parent viewcontroller
+        }
     }
 }
