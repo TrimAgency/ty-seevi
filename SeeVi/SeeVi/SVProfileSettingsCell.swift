@@ -48,7 +48,7 @@ class SVProfileSettingsCell: UITableViewCell {
         // MARK: - Additional layout
         contentView.backgroundColor = UIColor.white
 
-        descriptionLabel.textColor = UIColor.black
+        descriptionLabel.textColor = UIColor.svDarkBlue
         descriptionLabel.font = UIFont.systemFont(ofSize: 22)
 
         viewPassBtn.width(30)

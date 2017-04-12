@@ -15,6 +15,7 @@ class SVEditUserViewController: UIViewController {
     // MARK: - View assets
     var editingLabel = UILabel()
     var editTextField = UITextField()
+    var doneButton = UIBarButtonItem()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,16 +40,24 @@ class SVEditUserViewController: UIViewController {
         )
         
         // MARK: Additional layouts
+        
         self.title = "Edit Profile"
+        doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveChanges))
+        navigationItem.rightBarButtonItem = doneButton
         
         view.backgroundColor = UIColor.white
 
-        editingLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        editingLabel.font = UIFont.boldSystemFont(ofSize: 28)
         editingLabel.textColor = UIColor.svWarmGrey
         editingLabel.textAlignment = .center
         
         editTextField.placeholder = "Add new profile info..."
+        editTextField.font = UIFont.systemFont(ofSize: 22)
         editTextField.textAlignment = .center
         editTextField.centerVertically()
+    }
+    
+    @objc fileprivate func saveChanges() {
+       navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -14,6 +14,7 @@ class SVPaymentsViewController: UIViewController {
     
     //MARK: - Payments controllers
     var payMethodsTable = UITableView()
+    var addCardButton = UIButton()
     
     //MARK: - View data
     var payMethods = [SVPaymentMethod]() {
@@ -35,14 +36,25 @@ class SVPaymentsViewController: UIViewController {
     }
     
     fileprivate func setupView() {
-        
-        view.sv(payMethodsTable)
+        view.sv(payMethodsTable, addCardButton)
         view.layout(
             0,
-            |payMethodsTable| ~ view.frame.height / 1.5
+            |payMethodsTable| ~ view.frame.height / 1.5,
+            0,
+            |addCardButton| ~ view.frame.height / 8
         )
         
-        view.backgroundColor = UIColor.svDarkBlue
+        // MARK: - Additional layouts
+        
+        self.title = "Billing"
+        
+        view.backgroundColor = UIColor.groupTableViewBackground
+        
+        payMethodsTable.backgroundColor = UIColor.darkGray
+        payMethodsTable.separatorStyle = .none
+        
+        addCardButton.setTitle("Add Card", for: .normal)
+        addCardButton.backgroundColor = UIColor.lightGray
     }
     
     //Add fake card data
@@ -50,7 +62,7 @@ class SVPaymentsViewController: UIViewController {
         var emptyObjs = [SVPaymentMethod]()
         var method = SVPaymentMethod()
         
-        for _ in 0...6 {
+        for _ in 0...1 {
             method.cardNam = "Ty Monkey"
             method.cardNumber = "0000 0000 0000 0000"
             method.cardDate = "02/12"

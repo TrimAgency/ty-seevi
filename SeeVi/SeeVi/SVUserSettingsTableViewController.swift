@@ -207,9 +207,10 @@ class SVUserSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.backgroundView?.backgroundColor = UIColor.groupTableViewBackground
-            headerView.textLabel?.textColor = UIColor.svBrightLightBlue
-            headerView.textLabel?.font = UIFont.systemFont(ofSize: 22)
+            headerView.textLabel?.textColor = UIColor.svDarkBlue
+            headerView.textLabel?.font = UIFont.systemFont(ofSize: 20)
             headerView.textLabel?.backgroundColor = UIColor.clear
+            headerView.layer.opacity = 0.8
         }
     }
 

@@ -75,6 +75,7 @@ class SVPaymentMethodCell: UITableViewCell {
         
         // MARK: - Additional layout
         contentView.backgroundColor = UIColor.svDarkBlue
+        contentView.layer.addBorder(edge: .bottom, color: UIColor.groupTableViewBackground, thickness: 2)
         
         numberDescLabel.text = "Card number"
         numberDescLabel.textColor = textColorConstant
@@ -82,7 +83,7 @@ class SVPaymentMethodCell: UITableViewCell {
         
         numberLabel.textAlignment = .right
         numberLabel.textColor = textColorConstant
-        numberLabel.font = rightSideFont
+        numberLabel.font = UIFont.systemFont(ofSize: 16)
         
         dateDescLabel.text = "Expiration date"
         dateDescLabel.textColor = textColorConstant
