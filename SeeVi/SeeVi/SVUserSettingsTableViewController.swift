@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class SVUserSettingsTableViewController: UITableViewController {
+class SVUserSettingsTableViewController: UITableViewController, EditSettingDelegate {
     
     // MARK: - View assets
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
     var editSettingViewController = SVEditUserViewController()
     var paymentsViewController = SVPaymentsViewController()
-    var postCell = SVProfileSettingsCell()
     
     //MARK : - View data
     var thisUser = AppDelegate().myUser[0]
+    
     var infoTitles = ["Full name", "E-mail"]
     var passTitle = ["Current password"]
     
@@ -82,6 +82,10 @@ class SVUserSettingsTableViewController: UITableViewController {
     
     // MARK: - Controller protocols
     
+    func updateSettings() {
+        tableView.reloadData()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 6
     }
@@ -106,13 +110,13 @@ class SVUserSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
-        postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
         
         switch indexPath.section {
         case 0:
             profileCell.isEditingProfile = true //Set bool to modify profile cell layout for settings
             return profileCell
         case 1:
+            let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
             if indexPath.row == 0 {
                 postCell.descriptionLabel.text = infoTitles[indexPath.row]
                 postCell.userValLabel.text = thisUser.name
@@ -124,6 +128,7 @@ class SVUserSettingsTableViewController: UITableViewController {
             }
             return postCell
         case 2:
+            let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
             if indexPath.row == 0 {
                 postCell.descriptionLabel.text = passTitle[indexPath.row]
                 postCell.userValLabel.text = thisUser.passWord
@@ -138,6 +143,7 @@ class SVUserSettingsTableViewController: UITableViewController {
                 return postCell
             }
         case 5:
+            let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
             postCell.descriptionLabel.text = "Payment methods"
             postCell.accessoryType = .disclosureIndicator
             return postCell
@@ -145,7 +151,7 @@ class SVUserSettingsTableViewController: UITableViewController {
             break
         }
         
-        return UITableViewCell() //Defaults to standard uninitialized cell
+        return UITableViewCell() //Return unitialized cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -162,6 +168,7 @@ class SVUserSettingsTableViewController: UITableViewController {
         let valueToPass = currentCell.userValLabel.text
         
         //Set var values for the settings detailview
+        editSettingViewController.settingsDelegate = self
         editSettingViewController.editingLabel.text = titleToPass
         editSettingViewController.editTextField.text = valueToPass
         

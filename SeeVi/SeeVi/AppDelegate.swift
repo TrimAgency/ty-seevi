@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Provide GMaps API with Key
         GMSServices.provideAPIKey("AIzaSyBw1J9FHIMHcAesv9ihKfBIfYd_H6tgL8Y")
         
+        //If User Realm object is empty, create a new one.
+        if myUser.count == 0 {
+            seedUser()
+        }
+        
         setupMainTBController()
         
         return true
@@ -38,6 +43,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainTabBarController = MainTabBarController()
         window?.rootViewController = mainTabBarController
         window?.makeKeyAndVisible()
+    }
+    
+    // MARK: - Add spoofed user settings data
+    fileprivate func seedUser() {
+        let realmManager = AppDelegate().realm
+        let thisUser = SVUser()
+        
+        //User data
+        let imageData = UIImagePNGRepresentation(UIImage(named: "spoofed-image")!)! as NSData
+        thisUser.profileImg = imageData
+        thisUser.name = "John Doe"
+        thisUser.email = "Things@stuff.com"
+        thisUser.passWord = "supersecret"
+        thisUser.userDescription = "Seevi is literally my favorite app. Also, I like coffee."
+        
+        //Card data
+        let method = SVPaymentMethod()
+        for _ in 0...1 {
+            method.cardNam = "Ty Monkey"
+            method.cardNumber = "0000 0000 0000 0000"
+            method.cardDate = "02/12"
+            method.cvvNum = "234"
+            
+            //            thisUser.payMethods[0] = method
+        }
+        
+        try! realmManager.write {() -> Void in
+            realmManager.add(thisUser)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
