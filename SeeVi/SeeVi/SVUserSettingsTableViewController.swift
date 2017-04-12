@@ -39,14 +39,27 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         tableView.dataSource = self
         
         //Link unique reuse-identifiers
+        tableView.register(SVTextViewCell.self, forCellReuseIdentifier: "textViewCell")
         tableView.register(SVProfileUserCell.self, forCellReuseIdentifier: "ProfileCell")
-        tableView.register(SVProfileSettingsCell.self, forCellReuseIdentifier: "PostCell")
+        tableView.register(SVProfileSettingsCell.self, forCellReuseIdentifier: "settingCell")
         
         setupView()
     }
     
     // MARK: - Layout views
     
+    /*
+     Setup views/containers. Using Stevia to configure layouts: a framework that is practical due to
+     a more visually intuitive syntax. The basic usage of this framework involves setting a top constraint
+     for every asset that is vertically aligned. Also, Stevia allows for positioning view objects horizontally
+     aligned, and the sizes of each element become relative to one another based on percentages in relation to UIWindow sizes.
+     Finally, |-asset-| spans the window with a small margin left/right. ~ is used to set an approximate
+     height relative to window height.
+     
+     In order to use Stevia:
+     - 1. Add subviews to corresponding views w/ UIView.sv(views)
+     - 2. Layout views within the top view with UIView.layout()
+     */
     fileprivate func setupView() {
         // MARK : Additional layouts
         
@@ -58,7 +71,8 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         self.dismiss(animated: true, completion: nil)
     }
     
-    //Make viewController updates from SVProfileSettingsCell button
+    // MARK: - Updates from SVProfileSettingsCell button
+    
     @objc fileprivate func selectButtonForCell(sender: AnyObject) {
         let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
         let button = sender as! UIButton
@@ -82,8 +96,20 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         }
     }
     
+    /* 
+     NOTE: This simply changes the bool tied to the user, which indicates whether or not the password string
+     should be shown. Ideally there would be a workaround unrelated to local data. This logic would be triggered within
+     the cell via a custom protocol, etc.
+     */
     fileprivate func processButtonSelection(index: Int) {
+        let selectedUser = realmManager.objects(SVUser.self).first
         
+        // Set password bool to opposite
+        try! realmManager.write {() -> Void in
+            (selectedUser?.isPassShowing = !(selectedUser?.isPassShowing)!)!
+        }
+        // Change password string security
+        tableView.reloadData()
     }
     
     @objc fileprivate func showImagePicker() {
@@ -116,14 +142,13 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         case 5:
             return 1
         default:
-            break
+            return 1
         }
         
         return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! SVProfileUserCell
         
         switch indexPath.section {
@@ -132,39 +157,48 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             profileCell.settingsButton.addTarget(self, action: #selector(showImagePicker), for: .touchUpInside)
             return profileCell
         case 1:
-            let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
             if indexPath.row == 0 {
-                postCell.descriptionLabel.text = infoTitles[indexPath.row]
-                postCell.userValLabel.text = thisUser.name
-                postCell.accessoryType = .disclosureIndicator
+                settingCell.descriptionLabel.text = infoTitles[indexPath.row]
+                settingCell.userValLabel.text = thisUser.name
+                settingCell.accessoryType = .disclosureIndicator
             } else {
-                postCell.descriptionLabel.text = infoTitles[indexPath.row]
-                postCell.userValLabel.text = thisUser.email
-                postCell.accessoryType = .disclosureIndicator
+                settingCell.descriptionLabel.text = infoTitles[indexPath.row]
+                settingCell.userValLabel.text = thisUser.email
+                settingCell.accessoryType = .disclosureIndicator
             }
-            return postCell
+            return settingCell
         case 2:
-            let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
             if indexPath.row == 0 {
-                postCell.descriptionLabel.text = passTitle[indexPath.row]
-                postCell.userValLabel.text = thisUser.passWord
-                postCell.isPass = true
-                postCell.viewPassBtn.tag = indexPath.row
-                postCell.viewPassBtn.addTarget(self, action: #selector(selectButtonForCell(sender:)), for: .touchUpInside)
-                postCell.separatorInset = UIEdgeInsetsMake(0, view.bounds.width/2.0, 0, view.bounds.width/2.0)
-                return postCell
+                settingCell.descriptionLabel.text = passTitle[indexPath.row]
+                settingCell.userValLabel.text = thisUser.passWord
+                settingCell.isPass = true
+                settingCell.isPassShown = thisUser.isPassShowing
+                settingCell.viewPassBtn.tag = indexPath.row
+                settingCell.viewPassBtn.addTarget(self, action: #selector(selectButtonForCell(sender:)), for: .touchUpInside)
+                settingCell.separatorInset = UIEdgeInsetsMake(0, view.bounds.width/2.0, 0, view.bounds.width/2.0)
+                return settingCell
             } else {
-                postCell.descriptionLabel.text = "Change password"
-                postCell.userValLabel.isHidden = true // Hidden description label--only used to pass value to detail
-                postCell.userValLabel.text = thisUser.passWord
-                postCell.accessoryType = .disclosureIndicator
-                return postCell
+                settingCell.descriptionLabel.text = "Change password"
+                settingCell.userValLabel.isHidden = true // Hidden description label--only used to pass value to detail
+                settingCell.userValLabel.text = thisUser.passWord
+                settingCell.accessoryType = .disclosureIndicator
+                return settingCell
             }
+        case 3:
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "textViewCell") as! SVTextViewCell
+            settingCell.descriptionView.text = "BEER, FOOD, GAMES, CODE"
+            return settingCell
+        case 4:
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "textViewCell") as! SVTextViewCell
+            settingCell.descriptionView.text = thisUser.userDescription
+            return settingCell
         case 5:
-            let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
-            postCell.descriptionLabel.text = "Payment methods"
-            postCell.accessoryType = .disclosureIndicator
-            return postCell
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
+            settingCell.descriptionLabel.text = "Payment methods"
+            settingCell.accessoryType = .disclosureIndicator
+            return settingCell
         default:
             break
         }
@@ -175,7 +209,7 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // No transition for section 0
-        guard indexPath.section != 0 else {
+        guard indexPath.section != 0 && indexPath.section != 3 && indexPath.section != 4 else {
             return
         }
         
@@ -198,6 +232,10 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             } else {
                 navigationController?.pushViewController(editSettingViewController, animated: true)
             }
+        case 3:
+            break
+        case 4:
+            break
         case 5:
             navigationController?.pushViewController(paymentsViewController, animated: true)
         default:
@@ -207,10 +245,15 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellConstant = view.frame.height / 12
+        let extendedCellConstant = view.frame.height / 6
         
         switch indexPath.section {
         case 0:
             return view.frame.height / 3
+        case 4:
+            return extendedCellConstant
+        case 5:
+            return extendedCellConstant
         default:
             return cellConstant
         }
@@ -239,7 +282,15 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             headerView.textLabel?.textColor = UIColor.svDarkBlue
             headerView.textLabel?.font = UIFont.systemFont(ofSize: 20)
             headerView.textLabel?.backgroundColor = UIColor.clear
-            headerView.layer.opacity = 0.8
+            headerView.layer.opacity = 0.95
+        }
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 20 {
+            self.title = thisUser.name
+        } else {
+            self.title = ""
         }
     }
 }

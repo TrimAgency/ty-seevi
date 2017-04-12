@@ -46,7 +46,6 @@ class SVProfileUserCell: UITableViewCell {
     }
     
     func setupView() {
-        
         contentView.sv(mainBackgroundView)
         contentView.layout(
             0,
@@ -68,35 +67,34 @@ class SVProfileUserCell: UITableViewCell {
         
         mainBackgroundView.backgroundColor = UIColor.groupTableViewBackground
         
-        let imageFromData = UIImage(data: (myUser?.profileImg)! as Data)
+        let imageFromData = UIImage(data: (myUser?.profileImg)! as Data) // Get image from locally stored NSData
         avatar.image = imageFromData
         avatar.layer.masksToBounds = true
         avatar.height(80)
         avatar.width(80)
         avatar.backgroundColor = UIColor.lightGray
         avatar.layer.cornerRadius = 40
-        avatar.layer.shadowColor = UIColor.black.cgColor
-        avatar.layer.shadowOpacity = 1
-        avatar.layer.shadowOffset = .zero
-        avatar.layer.shadowRadius = 10
+        avatar.layer.borderColor = UIColor.darkGray.cgColor
+        avatar.layer.borderWidth = 2
         avatar.centerHorizontally()
         
         tappableName.height(20)
-        tappableName.top(-10)
+        tappableName.top(-10) // Negative top offset to move above vertically-subsequent object
         tappableName.font = UIFont.boldSystemFont(ofSize: 22)
         tappableName.backgroundColor = UIColor.clear
         tappableName.textColor = UIColor.black
         tappableName.textAlignment = .center
         tappableName.text = myUser?.name
         
-        //Setup edit profile button
-        var editProfileAttrText = NSAttributedString(string: "Edit Profile", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
-        
+        //Setup edit profile button attributes
+        var editProfileAttrText = NSAttributedString(string: "Edit Profile",
+                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
         if isEditingProfile {
             tappableName.frame = .zero
             tappableName.isHidden = true
 
-            editProfileAttrText = NSAttributedString(string: "Update Image", attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
+            editProfileAttrText = NSAttributedString(string: "Update Image",
+                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
         }
         
         settingsButton.setAttributedTitle(editProfileAttrText, for: .normal)

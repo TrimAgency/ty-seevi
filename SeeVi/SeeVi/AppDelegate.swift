@@ -59,15 +59,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //User data
         let imageData = UIImagePNGRepresentation(UIImage(named: "spoofed-image")!)! as NSData
         thisUser.profileImg = imageData
-        thisUser.name = "John Doe"
-        thisUser.email = "Things@stuff.com"
+        thisUser.name = "Dave Chappelle"
+        thisUser.email = "dave@dave.com"
         thisUser.passWord = "supersecret"
         thisUser.userDescription = "Seevi is literally my favorite app. Also, I like coffee."
         
         //Card data
         for _ in 0...1 {
             let method = SVPaymentMethod()
-            method.cardNam = "Ty Monkey"
+            method.cardNam = "Dave C."
             method.cardNumber = "0000 0000 0000 0000"
             method.cardDate = "02/12"
             method.cvvNum = "234"

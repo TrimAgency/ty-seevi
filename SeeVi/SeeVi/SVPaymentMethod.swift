@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+// MARK : Payment Realm object
 class SVPaymentMethod: Object {
     dynamic var cardNumber: String? = ""
     dynamic var cardDate: String? = "" //NOTE: This would likely be converted from actual NSDate
