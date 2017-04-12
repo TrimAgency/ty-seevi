@@ -13,6 +13,7 @@ import Stevia
 class SVTextViewCell: UITableViewCell {
     
     // MARK: - View objects
+    var containerView = UIView()
     var descriptionTitle = UILabel()
     var descriptionView = UITextView()
     
@@ -35,6 +36,27 @@ class SVTextViewCell: UITableViewCell {
     }
     
     fileprivate func setupView() {
+        contentView.sv(containerView)
+        contentView.layout(
+            5,
+            |-containerView-| ~ contentView.frame.height  - 10
+        )
         
+        containerView.sv(descriptionView)
+        containerView.layout(
+            5,
+            |descriptionView| ~ contentView.frame.height - 10 // Create space at top/bottom of descriptionview shape
+        )
+        
+        self.selectionStyle = .none
+        self.accessoryType = .disclosureIndicator
+        
+        containerView.backgroundColor = UIColor.groupTableViewBackground
+        containerView.layer.cornerRadius = 10
+        containerView.layer.borderColor = UIColor.svBrightLightBlue.cgColor
+        containerView.layer.borderWidth = 1
+        
+        descriptionView.backgroundColor = UIColor.clear
+        descriptionView.isUserInteractionEnabled = false
     }
 }

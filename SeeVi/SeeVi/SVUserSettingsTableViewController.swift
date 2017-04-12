@@ -39,6 +39,7 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         tableView.dataSource = self
         
         //Link unique reuse-identifiers
+        tableView.register(SVTextViewCell.self, forCellReuseIdentifier: "textViewCell")
         tableView.register(SVProfileUserCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(SVProfileSettingsCell.self, forCellReuseIdentifier: "settingCell")
         
@@ -173,9 +174,13 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
                 settingCell.accessoryType = .disclosureIndicator
                 return settingCell
             }
+        case 3:
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "textViewCell") as! SVTextViewCell
+            settingCell.descriptionView.text = "BEER, FOOD, GAMES, CODE"
+            return settingCell
         case 4:
-            let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell")! as UITableViewCell
-            settingCell.textLabel?.text = thisUser.userDescription
+            let settingCell = tableView.dequeueReusableCell(withIdentifier: "textViewCell") as! SVTextViewCell
+            settingCell.descriptionView.text = thisUser.userDescription
             return settingCell
         case 5:
             let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
@@ -192,7 +197,7 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // No transition for section 0
-        guard indexPath.section != 0 else {
+        guard indexPath.section != 0 && indexPath.section != 3 && indexPath.section != 4 else {
             return
         }
         
@@ -215,6 +220,10 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             } else {
                 navigationController?.pushViewController(editSettingViewController, animated: true)
             }
+        case 3:
+            break
+        case 4:
+            break
         case 5:
             navigationController?.pushViewController(paymentsViewController, animated: true)
         default:
@@ -261,7 +270,7 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             headerView.textLabel?.textColor = UIColor.svDarkBlue
             headerView.textLabel?.font = UIFont.systemFont(ofSize: 20)
             headerView.textLabel?.backgroundColor = UIColor.clear
-            headerView.layer.opacity = 0.8
+            headerView.layer.opacity = 0.95
         }
     }
     

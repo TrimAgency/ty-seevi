@@ -37,12 +37,14 @@ class SVPaymentsViewController: UIViewController {
     }
     
     fileprivate func setupView() {
+        let buttonConstant = view.frame.height / 8
+        
         view.sv(payMethodsTable, addCardButton)
         view.layout(
             0,
-            |payMethodsTable| ~ view.frame.height / 1.5,
+            |payMethodsTable| ~ view.frame.height  - buttonConstant,
             0,
-            |addCardButton| ~ view.frame.height / 8
+            |addCardButton| ~ buttonConstant
         )
         
         // MARK: - Additional layouts
