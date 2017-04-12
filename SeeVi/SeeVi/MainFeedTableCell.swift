@@ -11,6 +11,5 @@ import UIKit
 import Stevia
 
 class MainFeedTableCell: UITableViewCell {
-    
-    
+
 }

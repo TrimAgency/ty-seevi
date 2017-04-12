@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+// MARK : User Realm object
 class SVUser: Object {
     dynamic var name: String? = ""
     dynamic var profileImg: NSData? = NSData()
