@@ -11,6 +11,7 @@ target 'SeeVi' do
   pod ’SwiftyJSON’
   pod ‘GoogleMaps’
   pod ‘SDWebImage’
+  pod ‘RealmSwift’, ‘~> 2.4.3’
 
   target 'SeeViTests' do
     inherit! :search_paths

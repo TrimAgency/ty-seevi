@@ -13,11 +13,13 @@ import Stevia
 class SVPaymentsViewController: UIViewController {
     
     //MARK: - Payments controllers
+    
     var payMethodsTable = UITableView()
     var addCardButton = UIButton()
     
     //MARK: - View data
-    var payMethods = [SVPaymentMethod]() {
+    
+    var payMethods = AppDelegate().myUser[0].payMethods {
         didSet {
             payMethodsTable.reloadData()
         }
@@ -32,7 +34,6 @@ class SVPaymentsViewController: UIViewController {
         payMethodsTable.register(SVPaymentMethodCell.self, forCellReuseIdentifier: "PaymentCell")
         
         setupView()
-        seedJunkData()
     }
     
     fileprivate func setupView() {
@@ -55,22 +56,6 @@ class SVPaymentsViewController: UIViewController {
         
         addCardButton.setTitle("Add Card", for: .normal)
         addCardButton.backgroundColor = UIColor.lightGray
-    }
-    
-    //Add fake card data
-    fileprivate func seedJunkData() {
-        var emptyObjs = [SVPaymentMethod]()
-        var method = SVPaymentMethod()
-        
-        for _ in 0...1 {
-            method.cardNam = "Ty Monkey"
-            method.cardNumber = "0000 0000 0000 0000"
-            method.cardDate = "02/12"
-            method.cvvNum = "234"
-            
-            emptyObjs.append(method)
-        }
-        payMethods = emptyObjs
     }
 }
 
@@ -96,7 +81,7 @@ extension SVPaymentsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell") as! SVPaymentMethodCell
         
-        if !payMethods.isEmpty {                       // Verify a filled payment collection
+        if !(payMethods.isEmpty) {                       // Verify a filled payment collection
             cell.bankObject = payMethods[indexPath.row]
         }
         return cell

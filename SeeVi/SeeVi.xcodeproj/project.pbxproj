@@ -14,6 +14,7 @@
 		104E1BC71E9D8EF50095E742 /* SVPaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */; };
 		104E1BCA1E9D93170095E742 /* SVPaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC91E9D93170095E742 /* SVPaymentMethod.swift */; };
 		104E1BCC1E9DA0DC0095E742 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BCB1E9DA0DC0095E742 /* CALayer.swift */; };
+		104E1BCE1E9E98740095E742 /* SVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BCD1E9E98740095E742 /* SVUser.swift */; };
 		10779DE11E9C142300287557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE01E9C142300287557 /* AppDelegate.swift */; };
 		10779DE31E9C142300287557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE21E9C142300287557 /* ViewController.swift */; };
 		10779DE61E9C142300287557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10779DE41E9C142300287557 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentMethodCell.swift; sourceTree = "<group>"; };
 		104E1BC91E9D93170095E742 /* SVPaymentMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentMethod.swift; sourceTree = "<group>"; };
 		104E1BCB1E9DA0DC0095E742 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		104E1BCD1E9E98740095E742 /* SVUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVUser.swift; sourceTree = "<group>"; };
 		10779DDD1E9C142300287557 /* SeeVi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeVi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779DE01E9C142300287557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10779DE21E9C142300287557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				104E1BC91E9D93170095E742 /* SVPaymentMethod.swift */,
+				104E1BCD1E9E98740095E742 /* SVUser.swift */,
 			);
 			name = ObjectModels;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				104E1BCA1E9D93170095E742 /* SVPaymentMethod.swift in Sources */,
 				10DCFC7F1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift in Sources */,
 				10779E161E9C24BB00287557 /* UIColor.swift in Sources */,
+				104E1BCE1E9E98740095E742 /* SVUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
