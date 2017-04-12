@@ -242,6 +242,14 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             headerView.layer.opacity = 0.8
         }
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 20 {
+            self.title = thisUser.name
+        } else {
+            self.title = ""
+        }
+    }
 }
 
 // MARK: - Image picker protocols
