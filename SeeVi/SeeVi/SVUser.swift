@@ -15,6 +15,4 @@ class SVUser: Object {
     dynamic var email: String? = ""
     dynamic var passWord: String? = ""
     dynamic var userDescription: String? = ""
-//    dynamic var userTags = [String]()
-    let payMethods = List<SVPaymentMethod>()
 }

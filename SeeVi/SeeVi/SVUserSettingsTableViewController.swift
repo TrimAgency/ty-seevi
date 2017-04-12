@@ -9,17 +9,20 @@
 import Foundation
 import UIKit
 
-class SVUserSettingsTableViewController: UITableViewController, EditSettingDelegate {
+class SVUserSettingsTableViewController: UITableViewController, EditSettingDelegate, UINavigationControllerDelegate {
     
     // MARK: - View assets
     var closeButton = UIBarButtonItem()
     var saveButton = UIBarButtonItem()
+    
+    // MARK: - Controllers
     var editSettingViewController = SVEditUserViewController()
     var paymentsViewController = SVPaymentsViewController()
+    let imagePicker = UIImagePickerController()
     
     //MARK : - View data
+    let realmManager = AppDelegate().realm
     var thisUser = AppDelegate().myUser[0]
-    
     var infoTitles = ["Full name", "E-mail"]
     var passTitle = ["Current password"]
     
@@ -28,6 +31,10 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Setup image picker
+        imagePicker.delegate = self
+        
+        //Setup tableview
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -41,8 +48,8 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
     // MARK: - Layout views
     
     fileprivate func setupView() {
-        
         // MARK : Additional layouts
+        
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveChanges))
         navigationItem.rightBarButtonItem = rightBarButton //Right
     }
@@ -76,15 +83,23 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
     }
     
     fileprivate func processButtonSelection(index: Int) {
-        //        users[index].WasSelected = !users[index].WasSelected
         
     }
     
-    // MARK: - Controller protocols
+    @objc fileprivate func showImagePicker() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //PROTOCOLS
     
     func updateSettings() {
         tableView.reloadData()
     }
+    
+    // MARK: - Tableview controller protocols
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 6
@@ -114,6 +129,7 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         switch indexPath.section {
         case 0:
             profileCell.isEditingProfile = true //Set bool to modify profile cell layout for settings
+            profileCell.settingsButton.addTarget(self, action: #selector(showImagePicker), for: .touchUpInside)
             return profileCell
         case 1:
             let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! SVProfileSettingsCell
@@ -139,6 +155,8 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
                 return postCell
             } else {
                 postCell.descriptionLabel.text = "Change password"
+                postCell.userValLabel.isHidden = true // Hidden description label--only used to pass value to detail
+                postCell.userValLabel.text = thisUser.passWord
                 postCell.accessoryType = .disclosureIndicator
                 return postCell
             }
@@ -224,5 +242,26 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             headerView.layer.opacity = 0.8
         }
     }
+}
 
+// MARK: - Image picker protocols
+
+extension SVUserSettingsTableViewController : UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        print(info)
+        if let theImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            let resizedImage = UIImage().resizeImage(image: theImage, newWidth: 200)
+            let updateUser = realmManager.objects(SVUser.self).first
+            let imageData = UIImagePNGRepresentation(resizedImage!)! as NSData
+            
+            try! realmManager.write {
+                updateUser?.profileImg = imageData
+            }
+        }
+        picker.dismiss(animated: true, completion: nil)
+        
+        tableView.reloadData()
+    }
 }

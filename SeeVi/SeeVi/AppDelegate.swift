@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return realm.objects(SVUser.self)
         }
     }
+    var paymentMethods: Results<SVPaymentMethod> {
+        get {
+            return realm.objects(SVPaymentMethod.self)
+        }
+    }
+
     
     var window: UIWindow?
 
@@ -59,14 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         thisUser.userDescription = "Seevi is literally my favorite app. Also, I like coffee."
         
         //Card data
-        let method = SVPaymentMethod()
         for _ in 0...1 {
+            let method = SVPaymentMethod()
             method.cardNam = "Ty Monkey"
             method.cardNumber = "0000 0000 0000 0000"
             method.cardDate = "02/12"
             method.cvvNum = "234"
             
-            //            thisUser.payMethods[0] = method
+            try! realmManager.write {() -> Void in
+                realmManager.add(method)
+            }
         }
         
         try! realmManager.write {() -> Void in

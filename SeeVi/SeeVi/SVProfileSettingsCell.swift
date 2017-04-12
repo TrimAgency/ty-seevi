@@ -57,7 +57,7 @@ class SVProfileSettingsCell: UITableViewCell {
         viewPassBtn.isHidden = true
 
         userValLabel.textColor = UIColor.lightGray
-        userValLabel.font = UIFont.systemFont(ofSize: 22)
+        userValLabel.font = UIFont.systemFont(ofSize: 18)
         userValLabel.textAlignment = .right
         if isPass {
             userValLabel.text = String(repeating: "*", count: (userValLabel.text?.characters.count) ?? 5)
