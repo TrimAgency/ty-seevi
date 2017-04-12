@@ -17,8 +17,15 @@ class SVProfileSettingsCell: UITableViewCell {
     var userValLabel = UILabel()
     var viewPassBtn = UIButton()
     
-    // MARK : Update views based on conditions
+    // MARK : Update password security view based on bool
     var isPass: Bool = false
+    var isPassShown: Bool? {
+        didSet {
+            if !isPassShown! { // If isPassShown = false, secure the password string.
+                userValLabel.text = String(repeating: "*", count: (userValLabel.text?.characters.count) ?? 5)
+            }
+        }
+    }
     
     //MARK: - Lifecycle
     override func layoutSubviews() {
@@ -60,7 +67,6 @@ class SVProfileSettingsCell: UITableViewCell {
         userValLabel.font = UIFont.systemFont(ofSize: 18)
         userValLabel.textAlignment = .right
         if isPass {
-            userValLabel.text = String(repeating: "*", count: (userValLabel.text?.characters.count) ?? 5)
             viewPassBtn.isHidden = false
         }
     }

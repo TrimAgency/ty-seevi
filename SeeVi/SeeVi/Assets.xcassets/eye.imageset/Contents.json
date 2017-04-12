@@ -2,16 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "eye-close-up (2).png",
+      "filename" : "eye-close-up.pdf",
       "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {
