@@ -46,17 +46,19 @@ class SVProfileSettingsCell: UITableViewCell {
     }
     
     fileprivate func setupView() {
+        let leftMarginConstant = contentView.frame.width / 20
+        
         contentView.sv(descriptionLabel, userValLabel, viewPassBtn)
         contentView.layout(
             0,
-            |-descriptionLabel-userValLabel-viewPassBtn-| ~ contentView.frame.height
+            |-leftMarginConstant-descriptionLabel-userValLabel-viewPassBtn-| ~ contentView.frame.height
         )
 
         // MARK: - Additional layout
         contentView.backgroundColor = UIColor.white
 
         descriptionLabel.textColor = UIColor.svDarkBlue
-        descriptionLabel.font = UIFont.systemFont(ofSize: 22)
+        descriptionLabel.font = UIFont.svTextStyle5Font()
 
         viewPassBtn.width(30)
         viewPassBtn.height(30)
@@ -64,7 +66,7 @@ class SVProfileSettingsCell: UITableViewCell {
         viewPassBtn.isHidden = true
 
         userValLabel.textColor = UIColor.lightGray
-        userValLabel.font = UIFont.systemFont(ofSize: 18)
+        userValLabel.font = UIFont.svTextStyle5Font()
         userValLabel.textAlignment = .right
         if isPass {
             viewPassBtn.isHidden = false

@@ -80,7 +80,7 @@ class SVProfileUserCell: UITableViewCell {
         
         tappableName.height(20)
         tappableName.top(-10) // Negative top offset to move above vertically-subsequent object
-        tappableName.font = UIFont.boldSystemFont(ofSize: 22)
+        tappableName.font = UIFont.svTextStyle2Font()
         tappableName.backgroundColor = UIColor.clear
         tappableName.textColor = UIColor.black
         tappableName.textAlignment = .center
@@ -88,13 +88,13 @@ class SVProfileUserCell: UITableViewCell {
         
         //Setup edit profile button attributes
         var editProfileAttrText = NSAttributedString(string: "Edit Profile",
-                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
+                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue, NSFontAttributeName: UIFont.svTextStyle4Font()!])
         if isEditingProfile {
             tappableName.frame = .zero
             tappableName.isHidden = true
 
             editProfileAttrText = NSAttributedString(string: "Update Image",
-                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue])
+                                                     attributes: [NSForegroundColorAttributeName : UIColor.svBrightLightBlue, NSFontAttributeName: UIFont.svTextStyle4Font()!])
         }
         
         settingsButton.setAttributedTitle(editProfileAttrText, for: .normal)

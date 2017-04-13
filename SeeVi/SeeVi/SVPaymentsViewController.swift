@@ -49,27 +49,31 @@ class SVPaymentsViewController: UIViewController {
      - 2. Layout views within the top view with UIView.layout()
      */
     fileprivate func setupView() {
-        let buttonConstant = view.frame.height / 8
+        let buttonConstant = view.frame.height / 10
         
         view.sv(payMethodsTable, addCardButton)
         view.layout(
             0,
-            |payMethodsTable| ~ view.frame.height  - buttonConstant,
+            |payMethodsTable| ~ view.frame.height  - buttonConstant - 10, //Creates top space for the UIButton
             0,
-            |addCardButton| ~ buttonConstant
+            |-addCardButton-| ~ buttonConstant
         )
         
         // MARK: - Additional layouts
         
         self.title = "Billing"
         
-        view.backgroundColor = UIColor.svDarkBlue
+        view.backgroundColor = UIColor.groupTableViewBackground
         
-        payMethodsTable.backgroundColor = UIColor.lightGray
+        payMethodsTable.backgroundColor = UIColor.groupTableViewBackground
         payMethodsTable.separatorStyle = .none
         
-        addCardButton.setTitle("Add an Accont", for: .normal)
-        addCardButton.backgroundColor = UIColor.lightGray
+        let addCardAttrText = NSAttributedString(string: "Add an Account",
+                                                     attributes: [NSForegroundColorAttributeName : UIColor.white,
+                                                                  NSFontAttributeName: UIFont.svTextStyle3Font()!])
+        addCardButton.setAttributedTitle(addCardAttrText, for: .normal)
+        addCardButton.backgroundColor = UIColor.svDarkBlue
+        addCardButton.layer.cornerRadius = 10
     }
 }
 

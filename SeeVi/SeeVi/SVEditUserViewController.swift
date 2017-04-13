@@ -70,13 +70,13 @@ class SVEditUserViewController: UIViewController {
         
         view.backgroundColor = UIColor.groupTableViewBackground
 
-        editingLabel.font = UIFont.boldSystemFont(ofSize: 28)
+        editingLabel.font = UIFont.svTextStyle2Font()
         editingLabel.textColor = UIColor.svWarmGrey
         editingLabel.textAlignment = .center
         
         editTextField.placeholder = "Add new profile info..."
         editTextField.textColor = UIColor.svDarkBlue
-        editTextField.font = UIFont.systemFont(ofSize: 26)
+        editTextField.font = UIFont.svTextStyle3Font()
         editTextField.textAlignment = .center
         editTextField.centerVertically()
     }

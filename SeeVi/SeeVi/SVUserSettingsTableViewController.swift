@@ -280,9 +280,9 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.backgroundView?.backgroundColor = UIColor.groupTableViewBackground
             headerView.textLabel?.textColor = UIColor.svDarkBlue
-            headerView.textLabel?.font = UIFont.systemFont(ofSize: 20)
+            headerView.textLabel?.font = UIFont.svTextStyle5Font()
             headerView.textLabel?.backgroundColor = UIColor.clear
-            headerView.layer.opacity = 0.95
+            headerView.layer.opacity = 0.9
         }
     }
     

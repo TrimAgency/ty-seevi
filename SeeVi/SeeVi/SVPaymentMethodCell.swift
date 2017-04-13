@@ -56,7 +56,7 @@ class SVPaymentMethodCell: UITableViewCell {
     fileprivate func setupView() {
         let rowHeightConstant = contentView.frame.height / 3
         let rowWidthConstant = contentView.frame.width / 3
-        let leftSideFont = UIFont.boldSystemFont(ofSize: 17)
+        let leftSideFont = UIFont.svTextStyle7Font()
         let rightSideFont = UIFont.systemFont(ofSize: 18)
         
         let textColorConstant = UIColor.groupTableViewBackground
