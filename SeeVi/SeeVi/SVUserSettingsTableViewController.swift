@@ -153,10 +153,16 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
         
         switch indexPath.section {
         case 0:
+            
+            //Profile cell
+            
             profileCell.isEditingProfile = true //Set bool to modify profile cell layout for settings
             profileCell.settingsButton.addTarget(self, action: #selector(showImagePicker), for: .touchUpInside)
             return profileCell
         case 1:
+            
+            //User information
+            
             let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
             if indexPath.row == 0 {
                 settingCell.descriptionLabel.text = infoTitles[indexPath.row]
@@ -169,6 +175,9 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
             }
             return settingCell
         case 2:
+            
+            //User security
+            
             let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
             if indexPath.row == 0 {
                 settingCell.descriptionLabel.text = passTitle[indexPath.row]
@@ -187,14 +196,24 @@ class SVUserSettingsTableViewController: UITableViewController, EditSettingDeleg
                 return settingCell
             }
         case 3:
+            
+            //User tags
+            
             let settingCell = tableView.dequeueReusableCell(withIdentifier: "textViewCell") as! SVTextViewCell
             settingCell.descriptionView.text = "BEER, FOOD, GAMES, CODE"
             return settingCell
+            
         case 4:
+            
+            //User description
+            
             let settingCell = tableView.dequeueReusableCell(withIdentifier: "textViewCell") as! SVTextViewCell
             settingCell.descriptionView.text = thisUser.userDescription
             return settingCell
         case 5:
+            
+            //Billing
+            
             let settingCell = tableView.dequeueReusableCell(withIdentifier: "settingCell") as! SVProfileSettingsCell
             settingCell.descriptionLabel.text = "Payment methods"
             settingCell.accessoryType = .disclosureIndicator
