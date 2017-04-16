@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */; };
+		104E1BC11E9D3B790095E742 /* SVEditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */; };
+		104E1BC31E9D688F0095E742 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC21E9D688F0095E742 /* UIFont.swift */; };
+		104E1BC51E9D87BD0095E742 /* SVPaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC41E9D87BD0095E742 /* SVPaymentsViewController.swift */; };
+		104E1BC71E9D8EF50095E742 /* SVPaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */; };
+		104E1BCA1E9D93170095E742 /* SVPaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BC91E9D93170095E742 /* SVPaymentMethod.swift */; };
+		104E1BCC1E9DA0DC0095E742 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BCB1E9DA0DC0095E742 /* CALayer.swift */; };
+		104E1BCE1E9E98740095E742 /* SVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BCD1E9E98740095E742 /* SVUser.swift */; };
+		104E1BD01E9EC15D0095E742 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BCF1E9EC15D0095E742 /* UIImage.swift */; };
+		104E1BD21E9ED3EE0095E742 /* SVTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E1BD11E9ED3EE0095E742 /* SVTextViewCell.swift */; };
 		10779DE11E9C142300287557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE01E9C142300287557 /* AppDelegate.swift */; };
 		10779DE31E9C142300287557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DE21E9C142300287557 /* ViewController.swift */; };
 		10779DE61E9C142300287557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10779DE41E9C142300287557 /* Main.storyboard */; };
@@ -15,8 +25,31 @@
 		10779DF61E9C142300287557 /* SeeViTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779DF51E9C142300287557 /* SeeViTests.swift */; };
 		10779E011E9C142300287557 /* SeeViUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E001E9C142300287557 /* SeeViUITests.swift */; };
 		10779E101E9C16D800287557 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E0F1E9C16D800287557 /* MainTabBarController.swift */; };
-		10779E131E9C172400287557 /* SeeViMainFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E121E9C172400287557 /* SeeViMainFeedController.swift */; };
+		10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E121E9C172400287557 /* SeeViSearchViewController.swift */; };
 		10779E161E9C24BB00287557 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10779E151E9C24BB00287557 /* UIColor.swift */; };
+		10DCFC7F1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCFC7E1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift */; };
+		10DCFC821E9C44B000ADAD9D /* MainFeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCFC811E9C44B000ADAD9D /* MainFeedTableCell.swift */; };
+		10DCFC851E9C5E2400ADAD9D /* SVProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCFC841E9C5E2400ADAD9D /* SVProfileViewController.swift */; };
+		10DCFC871E9C624A00ADAD9D /* SVProfileUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCFC861E9C624A00ADAD9D /* SVProfileUserCell.swift */; };
+		10DCFC891E9C699700ADAD9D /* SVUserSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCFC881E9C699700ADAD9D /* SVUserSettingsTableViewController.swift */; };
+		10FB1EA41EA0254600C126DD /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E951EA0254600C126DD /* Montserrat-BlackItalic.ttf */; };
+		10FB1EA51EA0254600C126DD /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E961EA0254600C126DD /* Montserrat-Bold.ttf */; };
+		10FB1EA61EA0254600C126DD /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E971EA0254600C126DD /* Montserrat-BoldItalic.ttf */; };
+		10FB1EA71EA0254600C126DD /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E981EA0254600C126DD /* Montserrat-ExtraBold.ttf */; };
+		10FB1EA81EA0254600C126DD /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E991EA0254600C126DD /* Montserrat-ExtraBoldItalic.ttf */; };
+		10FB1EA91EA0254600C126DD /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E9A1EA0254600C126DD /* Montserrat-ExtraLight.ttf */; };
+		10FB1EAA1EA0254600C126DD /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E9B1EA0254600C126DD /* Montserrat-ExtraLightItalic.ttf */; };
+		10FB1EAB1EA0254600C126DD /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E9C1EA0254600C126DD /* Montserrat-Italic.ttf */; };
+		10FB1EAC1EA0254600C126DD /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E9D1EA0254600C126DD /* Montserrat-Light.ttf */; };
+		10FB1EAD1EA0254600C126DD /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E9E1EA0254600C126DD /* Montserrat-LightItalic.ttf */; };
+		10FB1EAE1EA0254600C126DD /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1E9F1EA0254600C126DD /* Montserrat-Medium.ttf */; };
+		10FB1EAF1EA0254600C126DD /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EA01EA0254600C126DD /* Montserrat-MediumItalic.ttf */; };
+		10FB1EB01EA0254600C126DD /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EA11EA0254600C126DD /* Montserrat-Regular.ttf */; };
+		10FB1EB11EA0254600C126DD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EA21EA0254600C126DD /* Montserrat-SemiBold.ttf */; };
+		10FB1EB21EA0254600C126DD /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EA31EA0254600C126DD /* Montserrat-SemiBoldItalic.ttf */; };
+		10FB1EB41EA0255000C126DD /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EB31EA0255000C126DD /* Montserrat-Black.ttf */; };
+		10FB1EB71EA0255A00C126DD /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EB51EA0255A00C126DD /* Montserrat-Thin.ttf */; };
+		10FB1EB81EA0255A00C126DD /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10FB1EB61EA0255A00C126DD /* Montserrat-ThinItalic.ttf */; };
 		94721EDBCA10C8D7E4FA01FA /* Pods_SeeViTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB9A878A6A9C4181B3DC7E /* Pods_SeeViTests.framework */; };
 		A926B5D011383368EBCFA549 /* Pods_SeeVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B05481957BF2F2A59439E7 /* Pods_SeeVi.framework */; };
 		CDE7B9458BE3ABCFF1B9C730 /* Pods_SeeViUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D958122A69F332734DB888 /* Pods_SeeViUITests.framework */; };
@@ -41,6 +74,16 @@
 
 /* Begin PBXFileReference section */
 		069D59AAC142E5332B1D570F /* Pods-SeeViTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.release.xcconfig"; sourceTree = "<group>"; };
+		101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProfileSettingsCell.swift; sourceTree = "<group>"; };
+		104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVEditUserViewController.swift; sourceTree = "<group>"; };
+		104E1BC21E9D688F0095E742 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		104E1BC41E9D87BD0095E742 /* SVPaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentsViewController.swift; sourceTree = "<group>"; };
+		104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentMethodCell.swift; sourceTree = "<group>"; };
+		104E1BC91E9D93170095E742 /* SVPaymentMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPaymentMethod.swift; sourceTree = "<group>"; };
+		104E1BCB1E9DA0DC0095E742 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		104E1BCD1E9E98740095E742 /* SVUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVUser.swift; sourceTree = "<group>"; };
+		104E1BCF1E9EC15D0095E742 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		104E1BD11E9ED3EE0095E742 /* SVTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVTextViewCell.swift; sourceTree = "<group>"; };
 		10779DDD1E9C142300287557 /* SeeVi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeVi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10779DE01E9C142300287557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10779DE21E9C142300287557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,8 +98,31 @@
 		10779E001E9C142300287557 /* SeeViUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeViUITests.swift; sourceTree = "<group>"; };
 		10779E021E9C142300287557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10779E0F1E9C16D800287557 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		10779E121E9C172400287557 /* SeeViMainFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViMainFeedController.swift; sourceTree = "<group>"; };
+		10779E121E9C172400287557 /* SeeViSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViSearchViewController.swift; sourceTree = "<group>"; };
 		10779E151E9C24BB00287557 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		10DCFC7E1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViMainFeedViewController.swift; sourceTree = "<group>"; };
+		10DCFC811E9C44B000ADAD9D /* MainFeedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedTableCell.swift; sourceTree = "<group>"; };
+		10DCFC841E9C5E2400ADAD9D /* SVProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProfileViewController.swift; sourceTree = "<group>"; };
+		10DCFC861E9C624A00ADAD9D /* SVProfileUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProfileUserCell.swift; sourceTree = "<group>"; };
+		10DCFC881E9C699700ADAD9D /* SVUserSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVUserSettingsTableViewController.swift; sourceTree = "<group>"; };
+		10FB1E951EA0254600C126DD /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-BlackItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		10FB1E961EA0254600C126DD /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		10FB1E971EA0254600C126DD /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-BoldItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		10FB1E981EA0254600C126DD /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		10FB1E991EA0254600C126DD /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBoldItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		10FB1E9A1EA0254600C126DD /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraLight.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		10FB1E9B1EA0254600C126DD /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraLightItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		10FB1E9C1EA0254600C126DD /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Italic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		10FB1E9D1EA0254600C126DD /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		10FB1E9E1EA0254600C126DD /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-LightItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		10FB1E9F1EA0254600C126DD /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		10FB1EA01EA0254600C126DD /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-MediumItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		10FB1EA11EA0254600C126DD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		10FB1EA21EA0254600C126DD /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		10FB1EA31EA0254600C126DD /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBoldItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		10FB1EB31EA0255000C126DD /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Black.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		10FB1EB51EA0255A00C126DD /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Thin.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		10FB1EB61EA0255A00C126DD /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ThinItalic.ttf"; path = "SeeVi/Assets.xcassets/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		116E4F1A1548294BF50407B4 /* Pods-SeeViTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeViTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeViTests/Pods-SeeViTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4664814C9453548D34778AF8 /* Pods-SeeVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi.release.xcconfig"; sourceTree = "<group>"; };
 		586459E8617230A53872667D /* Pods-SeeVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeeVi/Pods-SeeVi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,9 +174,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		104E1BC81E9D92F00095E742 /* ObjectModels */ = {
+			isa = PBXGroup;
+			children = (
+				104E1BC91E9D93170095E742 /* SVPaymentMethod.swift */,
+				104E1BCD1E9E98740095E742 /* SVUser.swift */,
+			);
+			name = ObjectModels;
+			sourceTree = "<group>";
+		};
 		10779DD41E9C142300287557 = {
 			isa = PBXGroup;
 			children = (
+				10FB1EB91EA0256200C126DD /* Fonts */,
 				10779DDF1E9C142300287557 /* SeeVi */,
 				10779DF41E9C142300287557 /* SeeViTests */,
 				10779DFF1E9C142300287557 /* SeeViUITests */,
@@ -133,10 +209,14 @@
 		10779DDF1E9C142300287557 /* SeeVi */ = {
 			isa = PBXGroup;
 			children = (
-				10779E141E9C24A200287557 /* AssetExtensions */,
-				10779E111E9C16FD00287557 /* FeedControllers */,
-				10779E0E1E9C16BA00287557 /* Custom */,
 				10779DE01E9C142300287557 /* AppDelegate.swift */,
+				104E1BC81E9D92F00095E742 /* ObjectModels */,
+				10DCFC801E9C442400ADAD9D /* CustomCells */,
+				10DCFC831E9C5E0800ADAD9D /* ProfileControllers */,
+				10779E171E9C3B2A00287557 /* SearchControllers */,
+				10779E141E9C24A200287557 /* Extensions */,
+				10779E111E9C16FD00287557 /* FeedControllers */,
+				10779E0E1E9C16BA00287557 /* CustomNavigation */,
 				10779DE21E9C142300287557 /* ViewController.swift */,
 				10779DE41E9C142300287557 /* Main.storyboard */,
 				10779DE71E9C142300287557 /* Assets.xcassets */,
@@ -164,28 +244,87 @@
 			path = SeeViUITests;
 			sourceTree = "<group>";
 		};
-		10779E0E1E9C16BA00287557 /* Custom */ = {
+		10779E0E1E9C16BA00287557 /* CustomNavigation */ = {
 			isa = PBXGroup;
 			children = (
 				10779E0F1E9C16D800287557 /* MainTabBarController.swift */,
 			);
-			name = Custom;
+			name = CustomNavigation;
 			sourceTree = "<group>";
 		};
 		10779E111E9C16FD00287557 /* FeedControllers */ = {
 			isa = PBXGroup;
 			children = (
-				10779E121E9C172400287557 /* SeeViMainFeedController.swift */,
+				10DCFC7E1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift */,
 			);
 			name = FeedControllers;
 			sourceTree = "<group>";
 		};
-		10779E141E9C24A200287557 /* AssetExtensions */ = {
+		10779E141E9C24A200287557 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				10779E151E9C24BB00287557 /* UIColor.swift */,
+				104E1BC21E9D688F0095E742 /* UIFont.swift */,
+				104E1BCB1E9DA0DC0095E742 /* CALayer.swift */,
+				104E1BCF1E9EC15D0095E742 /* UIImage.swift */,
 			);
-			name = AssetExtensions;
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		10779E171E9C3B2A00287557 /* SearchControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10779E121E9C172400287557 /* SeeViSearchViewController.swift */,
+			);
+			name = SearchControllers;
+			sourceTree = "<group>";
+		};
+		10DCFC801E9C442400ADAD9D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				10DCFC811E9C44B000ADAD9D /* MainFeedTableCell.swift */,
+				10DCFC861E9C624A00ADAD9D /* SVProfileUserCell.swift */,
+				101BCB491E9C7CD6000A8D3E /* SVProfileSettingsCell.swift */,
+				104E1BC61E9D8EF50095E742 /* SVPaymentMethodCell.swift */,
+				104E1BD11E9ED3EE0095E742 /* SVTextViewCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		10DCFC831E9C5E0800ADAD9D /* ProfileControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10DCFC841E9C5E2400ADAD9D /* SVProfileViewController.swift */,
+				10DCFC881E9C699700ADAD9D /* SVUserSettingsTableViewController.swift */,
+				104E1BC01E9D3B790095E742 /* SVEditUserViewController.swift */,
+				104E1BC41E9D87BD0095E742 /* SVPaymentsViewController.swift */,
+			);
+			name = ProfileControllers;
+			sourceTree = "<group>";
+		};
+		10FB1EB91EA0256200C126DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				10FB1EB51EA0255A00C126DD /* Montserrat-Thin.ttf */,
+				10FB1EB61EA0255A00C126DD /* Montserrat-ThinItalic.ttf */,
+				10FB1EB31EA0255000C126DD /* Montserrat-Black.ttf */,
+				10FB1E951EA0254600C126DD /* Montserrat-BlackItalic.ttf */,
+				10FB1E961EA0254600C126DD /* Montserrat-Bold.ttf */,
+				10FB1E971EA0254600C126DD /* Montserrat-BoldItalic.ttf */,
+				10FB1E981EA0254600C126DD /* Montserrat-ExtraBold.ttf */,
+				10FB1E991EA0254600C126DD /* Montserrat-ExtraBoldItalic.ttf */,
+				10FB1E9A1EA0254600C126DD /* Montserrat-ExtraLight.ttf */,
+				10FB1E9B1EA0254600C126DD /* Montserrat-ExtraLightItalic.ttf */,
+				10FB1E9C1EA0254600C126DD /* Montserrat-Italic.ttf */,
+				10FB1E9D1EA0254600C126DD /* Montserrat-Light.ttf */,
+				10FB1E9E1EA0254600C126DD /* Montserrat-LightItalic.ttf */,
+				10FB1E9F1EA0254600C126DD /* Montserrat-Medium.ttf */,
+				10FB1EA01EA0254600C126DD /* Montserrat-MediumItalic.ttf */,
+				10FB1EA11EA0254600C126DD /* Montserrat-Regular.ttf */,
+				10FB1EA21EA0254600C126DD /* Montserrat-SemiBold.ttf */,
+				10FB1EA31EA0254600C126DD /* Montserrat-SemiBoldItalic.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		331E4596A920351A9C934BA1 /* Frameworks */ = {
@@ -317,6 +456,24 @@
 				10779DEB1E9C142300287557 /* LaunchScreen.storyboard in Resources */,
 				10779DE81E9C142300287557 /* Assets.xcassets in Resources */,
 				10779DE61E9C142300287557 /* Main.storyboard in Resources */,
+				10FB1EB71EA0255A00C126DD /* Montserrat-Thin.ttf in Resources */,
+				10FB1EB81EA0255A00C126DD /* Montserrat-ThinItalic.ttf in Resources */,
+				10FB1EB41EA0255000C126DD /* Montserrat-Black.ttf in Resources */,
+				10FB1EA41EA0254600C126DD /* Montserrat-BlackItalic.ttf in Resources */,
+				10FB1EA51EA0254600C126DD /* Montserrat-Bold.ttf in Resources */,
+				10FB1EA61EA0254600C126DD /* Montserrat-BoldItalic.ttf in Resources */,
+				10FB1EA71EA0254600C126DD /* Montserrat-ExtraBold.ttf in Resources */,
+				10FB1EA81EA0254600C126DD /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				10FB1EA91EA0254600C126DD /* Montserrat-ExtraLight.ttf in Resources */,
+				10FB1EAA1EA0254600C126DD /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				10FB1EAB1EA0254600C126DD /* Montserrat-Italic.ttf in Resources */,
+				10FB1EAC1EA0254600C126DD /* Montserrat-Light.ttf in Resources */,
+				10FB1EAD1EA0254600C126DD /* Montserrat-LightItalic.ttf in Resources */,
+				10FB1EAE1EA0254600C126DD /* Montserrat-Medium.ttf in Resources */,
+				10FB1EAF1EA0254600C126DD /* Montserrat-MediumItalic.ttf in Resources */,
+				10FB1EB01EA0254600C126DD /* Montserrat-Regular.ttf in Resources */,
+				10FB1EB11EA0254600C126DD /* Montserrat-SemiBold.ttf in Resources */,
+				10FB1EB21EA0254600C126DD /* Montserrat-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +506,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		609B5C97D4F169D1306C2421 /* [CP] Copy Pods Resources */ = {
@@ -424,7 +581,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B13328123DF6833E3054FB38 /* [CP] Embed Pods Frameworks */ = {
@@ -469,7 +626,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -479,11 +636,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104E1BD21E9ED3EE0095E742 /* SVTextViewCell.swift in Sources */,
 				10779DE31E9C142300287557 /* ViewController.swift in Sources */,
-				10779E131E9C172400287557 /* SeeViMainFeedController.swift in Sources */,
+				10DCFC891E9C699700ADAD9D /* SVUserSettingsTableViewController.swift in Sources */,
+				104E1BC11E9D3B790095E742 /* SVEditUserViewController.swift in Sources */,
+				101BCB4A1E9C7CD6000A8D3E /* SVProfileSettingsCell.swift in Sources */,
+				10DCFC851E9C5E2400ADAD9D /* SVProfileViewController.swift in Sources */,
+				10779E131E9C172400287557 /* SeeViSearchViewController.swift in Sources */,
+				104E1BC71E9D8EF50095E742 /* SVPaymentMethodCell.swift in Sources */,
+				10DCFC871E9C624A00ADAD9D /* SVProfileUserCell.swift in Sources */,
 				10779DE11E9C142300287557 /* AppDelegate.swift in Sources */,
+				104E1BCC1E9DA0DC0095E742 /* CALayer.swift in Sources */,
+				104E1BC51E9D87BD0095E742 /* SVPaymentsViewController.swift in Sources */,
 				10779E101E9C16D800287557 /* MainTabBarController.swift in Sources */,
+				104E1BC31E9D688F0095E742 /* UIFont.swift in Sources */,
+				10DCFC821E9C44B000ADAD9D /* MainFeedTableCell.swift in Sources */,
+				104E1BCA1E9D93170095E742 /* SVPaymentMethod.swift in Sources */,
+				10DCFC7F1E9C3B8200ADAD9D /* SeeViMainFeedViewController.swift in Sources */,
+				104E1BD01E9EC15D0095E742 /* UIImage.swift in Sources */,
 				10779E161E9C24BB00287557 /* UIColor.swift in Sources */,
+				104E1BCE1E9E98740095E742 /* SVUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

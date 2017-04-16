@@ -23,22 +23,25 @@ class MainTabBarController: UITabBarController {
     // MARK: - Sets up TabBarController indexes/views
     
     fileprivate func setupTabs() {
-        let svFeedViewController = SeeViMainFeedViewController()
-        let svFeedNavController = UINavigationController(rootViewController: svFeedViewController)
-        let placeHolderVC1 = UIViewController()
+        let svMainFeedViewController = SeeViMainFeedViewController()
+        let svMainFeedNavController = UINavigationController(rootViewController: svMainFeedViewController)
+        
+        let svSearchViewController = SeeViSearchViewController()
+        let svFeedNavController = UINavigationController(rootViewController: svSearchViewController)
+        
         let placeHolderVC2 = UIViewController()
         let placeHolderVC3 = UIViewController()
-        let placeHolderVC4 = UIViewController()
+        let svProfileViewController = SVProfileViewController()
         
         //Configure viewcontrollers in tabbarcontroller
-        placeHolderVC1.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
-        placeHolderVC2.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
-        svFeedNavController.tabBarItem = UITabBarItem(title: "Add", image: nil, tag: 2)
+        svMainFeedNavController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
+        svFeedNavController.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
+        placeHolderVC2.tabBarItem = UITabBarItem(title: "Add", image: nil, tag: 2)
         placeHolderVC3.tabBarItem = UITabBarItem(title: "Notifs", image: nil, tag: 3)
-        placeHolderVC4.tabBarItem = UITabBarItem(title: "User", image: nil, tag: 4)
+        svProfileViewController.tabBarItem = UITabBarItem(title: "User", image: nil, tag: 4)
         //Add viewcontrollers
-        self.setViewControllers([placeHolderVC1, placeHolderVC2, svFeedNavController, placeHolderVC3, placeHolderVC4], animated: true)
-        self.selectedIndex = 2
+        self.setViewControllers([svMainFeedNavController, svFeedNavController, placeHolderVC2, placeHolderVC3, svProfileViewController], animated: true)
+        self.selectedIndex = 0
         
         self.delegate = self
     }
@@ -49,7 +52,6 @@ class MainTabBarController: UITabBarController {
 extension MainTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
-        
         let fromView: UIView = tabBarController.selectedViewController!.view
         let toView  : UIView = viewController.view
         if fromView == toView {
@@ -83,6 +85,6 @@ extension MainTabBarController: UITabBarControllerDelegate {
     
     // Menu Button Touch Action
     func addButtonAction(sender: UIButton) {
-        self.selectedIndex = 2
+//        self.selectedIndex = 2
     }
 }
